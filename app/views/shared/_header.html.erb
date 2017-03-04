@@ -5,11 +5,12 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <%= 
-          link_to_if admin_signed_in?, "Sign Out", destroy_admin_session_path, class: "navbar-brand page-scroll" do
-            link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll"
-          end
-        %>
+        <% if admin_signed_in? %>
+          <%= link_to "Sign Out", destroy_admin_session_path, class: "navbar-brand page-scroll" %>
+        <% else %>
+          <%= link_to "Sign Up", new_admin_registration_path, class: "navbar-brand page-scroll" %>
+          <%= link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll" %>
+        <% end %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,16 +37,3 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
-
-<header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <h1 id="homeHeading">Welcome To Dog Finder</h1>
-            <hr>
-            <p>
-              This site is to help your search to find the perfect dog for your perfect life.
-            </p>
-            <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-        </div>
-    </div>
-</header>
