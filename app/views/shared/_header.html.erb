@@ -5,7 +5,6 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" style="padding-right:45px;" href="#page-top">Welcome to Dog Finder</a>
             <%= 
               link_to_if admin_signed_in?, "Sign Out", destroy_admin_session_path, class: "navbar-brand page-scroll" do
                 link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll"
@@ -44,7 +43,7 @@
             <h1 id="homeHeading">Welcome To Dog Finder</h1>
             <hr>
             <p>
-              This site is to help your search to find the perfect dog for your perfect life
+              This site is to help your search to find the perfect dog for your perfect life.
             </p>
             <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
         </div>
