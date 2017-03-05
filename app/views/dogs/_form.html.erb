@@ -1,0 +1,29 @@
+<%= form_tag(dogs_path, method: "get", class: "search-dogs") do %>
+
+  <div id="form-searching-for-dogs">
+
+    <div class="location">
+      <%= label_tag "Location", class: "location-label" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Zip Code?", class: "zip-code-area" %>
+    </div>
+
+    <div class="dog-breed">
+      <%= label_tag :breed, class: "breed-label" %>
+      <%= text_field_tag :breed, params[:search], placeholder: "What Breed", class: "breed-text-field" %>
+    </div>
+
+    <div class="dog-age">
+      <%= label_tag :age, class: "age-label" %>
+      <%= options_for_select(:search, params[[["Baby", "0-2"], ["Young", "3-5"], ["Adult", "6-8"], {placeholder: "Choose an Age"}, class: "age-text-field"]]) %>
+    </div>
+
+    <div class="dog-gender">
+      <%= label_tag :gender, class: "gender-label" %>
+      <%= text_field :gender, :search, params[:search], placeholder: "Gender", class: "gender-text-field" %>
+    </div>
+
+    <div class="submit-button">
+      <%= submit_tag "Search for Dogs", name: nil, class: "dog-search-submit-button" %>
+    </div>
+  </div>
+<% end %>
