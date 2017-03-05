@@ -1,0 +1,19 @@
+<%= form_for @dogs, class: "search-dogs" do |f| %>
+  <% if @dogs.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dogs.errors.count, "error") %> prohibited this form from searching:<h2>
+      <ul>
+        <% @dogs.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="form-searching-for-dogs">
+
+    <div class="location">
+      <%= f.label "Location", class: "location-label" %>
+      <%= f.text_field placeholder: "Zip Code?", class: "zip-code-area" %>
+    </div>
+  </div>
