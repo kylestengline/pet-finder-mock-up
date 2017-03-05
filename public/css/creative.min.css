@@ -19,18 +19,14 @@ header{
 }
 
 /* Custom */
-/* Log In Form  */
 .login-form, .signup-form {
-  position: absolute;
   left: 5%;
-  top: 10%;
-  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 5%;
   width: 45%;
-  height: 75%;
-  border-radius: 5px;
+  height: 100%;
 }
 
-#admin_email, #admin_password, .login-title {
+#admin_email, #admin_password, .login-title, .sign-up-title {
   color: black;
 }
 
@@ -73,9 +69,22 @@ form.new_admin {
 
 body {
   background: url("../img/login-form.jpg") no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
+.alert {
+  color: red;
+  font-size: 18px;
+  margin-top: 70%;
+  background-color: white;
+  display: inline-block;
+}
+
+#error_explanation {
+  background-color: white;
+  padding: 10px;
+  padding-top: -70px;
+}
 
 
 /* End Custom */
