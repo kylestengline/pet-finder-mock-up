@@ -13,12 +13,12 @@ RSpec.feature "Searching for dogs" do
     click_link "Find A Dog To Adopt"
     expect(page).to have_current_path(dogs_path)
 
-    fill_in "Location", with: "92603"
+    fill_in "Zip Code", with: "92603"
     fill_in "Breed", with: dog.breed
-    fill_in "Age", with: dog.age
-    fill_in "Gender", with: dog.gender
+    find(:css, "#age_Baby[value='Baby']").set(true)     
+    fill_in "Dog Gender", with: dog.gender
 
-    click_button "Find Dogs"
-    expect(page).to have_current_path(dog_path(dog.id))
+    click_on "Search for Dogs"
+    expect(page).to have_current_path(searchs_index_path)
   end
 end

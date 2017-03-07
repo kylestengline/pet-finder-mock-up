@@ -1,0 +1,12 @@
+<div class="doge-info">
+  <% @dogs.each do |d| %>
+    <h2>Meet: <%= d.name %></h2>
+    <% if d.gender.titleize == "Female" %>
+      <h4>She is <%= d.age %> years old.</h4>
+    <% else %>
+      <h4>He is <%= d.age %> years old.</h4>
+    <% end %>
+    <h4><%= d.name %> is a <%= d.breed %></h4>
+    <h4>Posted On: <%= d.post_date %></h4>
+  <% end %>
+</div>
