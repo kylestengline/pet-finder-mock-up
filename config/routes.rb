@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
 
   resources :dogs, only: [:index, :show]
+  get "search/index"
 
   namespace :admin do
     resources :dogs

@@ -1,29 +1,39 @@
-<%= form_tag(dogs_path, method: "get", class: "search-dogs") do %>
+<div class="search-for-dogs-form">
+  <%= form_tag search_index_path, method: "get", class: "search-dogs" do %>
 
-  <div id="form-searching-for-dogs">
+    <div id="form-searching-for-dogs">
 
-    <div class="location">
-      <%= label_tag "Location", class: "location-label" %>
-      <%= text_field_tag :search, params[:search], placeholder: "Zip Code?", class: "zip-code-area" %>
+      <div class="location">
+        <% label_tag :location, class: "location-label" %>
+        <!-- set max and min for zip code -->
+        <%= number_field_tag :location, params[:location], placeholder: "Current Zip Code", class: "zip-code-area" %>
+      </div>
+
+      <div class="dog-breed">
+        <% label_tag :breed, class: "breed-label" %>
+        <%= text_field_tag :breed, params[:breed], placeholder: "Dog Breed", class: "breed-text-field" %>
+      </div>
+
+      <div class="dog-age">
+        <p class="age-name">Choose an Age Range:</p>
+        <%= radio_button_tag :age, "Baby" %>
+        <%= label_tag :age_baby, "0-2 years", class: "age-baby" %>
+        <%= radio_button_tag :age, "Young" %>
+        <%= label_tag :age_young, "3-5 years", class: "age-young" %>
+        <%= radio_button_tag :age, "Adult" %>
+        <%= label_tag :age_adult, "6-8 years", class: "age-adult" %>
+      </div>
+
+       <!-- #"age", options_from_collection_for_select(@dogs, "age") #params[[["Baby", "0-2"], ["Young", "3-5"], ["Adult", "6-8"], {placeholder: "Choose an Age"}, class: "age-text-field"]]) %>-->
+
+      <div class="dog-gender">
+        <% label_tag :gender, class: "gender-label" %>
+        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field" %>
+      </div>
+
+      <div class="submit-button-for-search">
+        <%= submit_tag "Search for Dogs", name: nil, class: "dog-search-submit-button" %>
+      </div>
     </div>
-
-    <div class="dog-breed">
-      <%= label_tag :breed, class: "breed-label" %>
-      <%= text_field_tag :breed, params[:search], placeholder: "What Breed", class: "breed-text-field" %>
-    </div>
-
-    <div class="dog-age">
-      <%= label_tag :age, class: "age-label" %>
-      <%= options_for_select(:search, params[[["Baby", "0-2"], ["Young", "3-5"], ["Adult", "6-8"], {placeholder: "Choose an Age"}, class: "age-text-field"]]) %>
-    </div>
-
-    <div class="dog-gender">
-      <%= label_tag :gender, class: "gender-label" %>
-      <%= text_field :gender, :search, params[:search], placeholder: "Gender", class: "gender-text-field" %>
-    </div>
-
-    <div class="submit-button">
-      <%= submit_tag "Search for Dogs", name: nil, class: "dog-search-submit-button" %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

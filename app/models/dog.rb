@@ -2,8 +2,9 @@ class Dog < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  def self.search(search)
-    where("location ILIKE ? OR breed ILIKE ? OR age ILIKE ? OR gender ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+  def self.search(location, breed, age, gender) 
+    return all unless location.present? || breed.present? || age.present? || gender.present?
+      where(['location LIKE ? AND breed LIKE ? AND age LIKE ? AND gender LIKE ?', "%#{location}%", "%#{breed}%", "%#{age}%", "%#{gender}%"])
   end
 
   validates :name, presence: true

@@ -7,6 +7,10 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all.order("created_at DESC")
     end
+    @dog_search = Dog.search(params[:location], params[:breed], params[:age], params[:gender]).all
+  end
+
+  def search
   end
 
   def show
