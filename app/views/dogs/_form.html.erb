@@ -6,7 +6,7 @@
       <div class="location">
         <% label_tag :location, class: "location-label" %>
         <!-- set max and min for zip code -->
-        <%= number_field_tag :location, params[:location], placeholder: "Current Zip Code", class: "zip-code-area" %>
+        <%= number_field_tag :location, params[:location], max: 5, placeholder: "Zip Code", class: "zip-code-area" %>
       </div>
 
       <div class="dog-breed">
