@@ -5,27 +5,29 @@
 
       <div class="location">
         <% label_tag :location, class: "location-label" %>
-        <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
+        <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area", required: true %>
       </div>
 
       <div class="dog-breed">
         <% label_tag :breed, class: "breed-label" %>
-        <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field" %>
+        <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field", required: true %>
       </div>
 
       <div class="dog-age">
         <p class="age-name">Choose an Age Range:</p>
         <%= radio_button_tag :age, "Baby" %>
-        <%= label_tag :age_baby, "0-2 years", class: "age-baby" %>
+        <%= label_tag :age_baby, "Baby: 0-2 years", class: "age-baby", required: true %>
+        <br/>
         <%= radio_button_tag :age, "Young" %>
-        <%= label_tag :age_young, "3-5 years", class: "age-young" %>
+        <%= label_tag :age_young, "Young: 3-5 years", class: "age-young", required: true %>
+        <br/>
         <%= radio_button_tag :age, "Adult" %>
-        <%= label_tag :age_adult, "6-8 years", class: "age-adult" %>
+        <%= label_tag :age_adult, "Adult: 6-8 years", class: "age-adult", required: true %>
       </div>
 
       <div class="dog-gender">
         <% label_tag :gender, class: "gender-label" %>
-        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field" %>
+        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field", required: true %>
       </div>
 
       <div class="submit-button-for-search">
