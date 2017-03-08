@@ -17,7 +17,7 @@ Dog.create!([
   { 
     location: "92603",
     name: "Jill" ,
-    age: 2 ,
+    age: "Baby",
     breed: "Corgi" ,
     gender: "female",
     adoptable: true,
@@ -29,7 +29,7 @@ Dog.create!([
   { 
     location: "92603",
     name: "Jack" ,
-    age: 7,
+    age: "Adult",
     breed: "Husky" ,
     gender: "male",
     adoptable: true,
