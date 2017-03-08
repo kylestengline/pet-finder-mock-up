@@ -5,7 +5,6 @@
 
       <div class="location">
         <% label_tag :location, class: "location-label" %>
-        <!-- set max and min for zip code -->
         <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
       </div>
 
@@ -23,8 +22,6 @@
         <%= radio_button_tag :age, "Adult" %>
         <%= label_tag :age_adult, "6-8 years", class: "age-adult" %>
       </div>
-
-       <!-- #"age", options_from_collection_for_select(@dogs, "age") #params[[["Baby", "0-2"], ["Young", "3-5"], ["Adult", "6-8"], {placeholder: "Choose an Age"}, class: "age-text-field"]]) %>-->
 
       <div class="dog-gender">
         <% label_tag :gender, class: "gender-label" %>

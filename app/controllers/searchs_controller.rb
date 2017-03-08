@@ -5,9 +5,8 @@ class SearchsController < ApplicationController
       #@dogs = Dog.search(params[:search]).order("#{@dogs.age}")
       @dogs = Dog.search(params[:location], params[:breed], params[:age], params[:gender]).all
     else
-      @dogs = Dog.all.order("age DESC")
+      @dogs = Dog.all.order("age ASC")
     end
-      @dog_search = Dog.search(params[:location], params[:breed], params[:age], params[:gender]).all
   end
 
 end
