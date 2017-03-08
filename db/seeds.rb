@@ -15,6 +15,7 @@ end
 
 Dog.create!([
   { 
+    location: "92603",
     name: "Jill" ,
     age: 2 ,
     breed: "Corgi" ,
@@ -26,6 +27,7 @@ Dog.create!([
     birth_date: "11/2/2015" 
   },
   { 
+    location: "92603",
     name: "Jack" ,
     age: 7,
     breed: "Husky" ,

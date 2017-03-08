@@ -1,10 +1,7 @@
 class DogsController < ApplicationController
 
   def index
-    @dogs = Dog.all
-  end
-
-  def search
+   # @dogs = Dog.all
   end
 
   def show

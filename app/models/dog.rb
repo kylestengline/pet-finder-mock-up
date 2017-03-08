@@ -4,7 +4,7 @@ class Dog < ApplicationRecord
 
   def self.search(location, breed, age, gender) 
     return all unless location.present? || breed.present? || age.present? || gender.present?
-      where(['location LIKE ? AND breed LIKE ? AND age LIKE ? AND gender LIKE ?', "%#{location}%", "%#{breed}%", "%#{age}%", "%#{gender}%"])
+    where(['location LIKE ? AND breed LIKE ? AND age LIKE ? AND gender LIKE ?', "%#{location}%", "%#{breed.downcase}%", "%#{age}%", "%#{gender.downcase}%"])
   end
 
   validates :name, presence: true
