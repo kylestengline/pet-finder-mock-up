@@ -3,7 +3,6 @@ class Dog < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   def self.search(location, breed, age, gender) 
-    #age = (age::text)
     age = age.to_s
     return all unless location.present? || breed.present? || age.present? || gender.present?
     where('location @@ ? AND breed @@ ? AND age = ? AND gender @@ ?', location, breed.downcase, age, gender.downcase)
