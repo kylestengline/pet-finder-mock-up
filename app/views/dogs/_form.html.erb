@@ -15,14 +15,12 @@
 
       <div class="dog-age">
         <p class="age-name">Choose an Age Range:</p>
-        <%= radio_button_tag :age, "Baby" %>
-        <%= label_tag :age_baby, "Baby: 0-2 years", class: "age-baby", required: true %>
+        <%= label_tag :age_baby, "Baby, 0-2 years", class: "age-baby" %>
         <br/>
-        <%= radio_button_tag :age, "Young" %>
-        <%= label_tag :age_young, "Young: 3-5 years", class: "age-young", required: true %>
+        <%= label_tag :age_young, "Young, 3-5 years", class: "age-young" %>
         <br/>
-        <%= radio_button_tag :age, "Adult" %>
-        <%= label_tag :age_adult, "Adult: 6-8 years", class: "age-adult", required: true %>
+        <%= label_tag :age_adult, "Adult, 6-8 years", class: "age-adult" %>
+        <%= number_field_tag :age, nil, max: 9, required: true %>
       </div>
 
       <div class="dog-gender">
