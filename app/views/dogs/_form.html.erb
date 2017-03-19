@@ -13,11 +13,11 @@
         <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field", required: true %>
       </div>
 
-        <!-- implement feature that allows user to type, baby, young or adult instead of number -->
-      <div class="dog-age-form">
-        <%= label_tag :age_baby, "Baby, 0-2 years", class: "age-baby" %>
+      <div class="dog-age">
+        <p class="age-name">Choose an Age From 1 - 9:</p>
+        <%= label_tag :age_baby, "Baby: 0-2 years", class: "age-baby" %>
         <br/>
-        <%= label_tag :age_young, "Young, 3-5 years", class: "age-young" %>
+        <%= label_tag :age_young, "Young: 3-5 years", class: "age-young" %>
         <br/>
         <%= label_tag :age_adult, "Adult, 6-8 years", class: "age-adult" %>
         <br/>
