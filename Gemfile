@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
-end
-
+end 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
@@ -36,6 +35,7 @@ gem 'gravtastic'
 gem 'devise'
 gem 'better_errors'
 gem 'rails-controller-testing'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

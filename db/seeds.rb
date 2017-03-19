@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Dog.destroy_all
+
+
 unless Admin.find_by( email: "stuff@things.com" )
   Admin.create!(
     email: "stuff@things.com",
@@ -16,27 +19,27 @@ end
 Dog.create!([
   { 
     location: "92603",
-    name: "Jill" ,
-    age: "Baby",
+    name: Faker::Name.first_name,
+    age: 2,
     breed: "Corgi" ,
     gender: "female",
     adoptable: true,
     size: "small",
     photo: "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg",
     color: "white, black, orange",
-    birth_date: "11/2/2015" 
+    birth_date: Faker::Date.birthday(1, 9)
   },
   { 
     location: "92603",
-    name: "Jack" ,
-    age: "Adult",
-    breed: "Husky" ,
+    name: Faker::Name.first_name,
+    age: 7,
+    breed: "Husky",
     gender: "male",
     adoptable: true,
-    size: "small",
+    size: "medium",
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
     color: "white, black",
-    birth_date: "11/2/2010" 
+    birth_date: Faker::Date.birthday(1, 9)
   }
 ])
 
