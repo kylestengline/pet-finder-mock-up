@@ -7,7 +7,7 @@ RSpec.feature "Showing content on the homepage" do
 
     expect(page).to have_link "Sign In"
 
-    expect(page).to have_content "Welcome To Dog Finder"
+    expect(page).to have_content "Welcome To Dog Seeker"
     expect(page).to have_link "Find A Dog To Adopt"
     expect(page).to have_link "About Dog Adoption"
     expect(page).to have_link "Dog Care"
