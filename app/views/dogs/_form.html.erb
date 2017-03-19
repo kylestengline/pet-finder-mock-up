@@ -14,12 +14,12 @@
       </div>
 
       <div class="dog-age">
-        <p class="age-name">Choose an Age Range:</p>
-        <%= label_tag :age_baby, "Baby, 0-2 years", class: "age-baby" %>
+        <p class="age-name">Choose an Age From 1 - 9:</p>
+        <%= label_tag :age_baby, "Baby: 0-2 years", class: "age-baby" %>
         <br/>
-        <%= label_tag :age_young, "Young, 3-5 years", class: "age-young" %>
+        <%= label_tag :age_young, "Young: 3-5 years", class: "age-young" %>
         <br/>
-        <%= label_tag :age_adult, "Adult, 6-8 years", class: "age-adult" %>
+        <%= label_tag :age_adult, "Adult: 6-8 years", class: "age-adult" %>
         <%= number_field_tag :age, nil, max: 9 %>
       </div>
 
