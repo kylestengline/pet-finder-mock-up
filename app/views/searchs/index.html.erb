@@ -11,6 +11,14 @@
       <h4 class="dog-age">He is <%= d.age %> years old.</h4>
     <% end %>
   <% end %>
+  <% unless @dogs.present? %>
+    <div class="no-doges-match">
+      <h3 class="search-returns-none">
+        No Dogs match your search criteria. Please try your search again.
+      </h3>
+      <h4><%= link_to "Search Again", dogs_path, class: "search-again" %></h4>
+    </div>
+  <% end %>
 </div>
 
-<h5><%= link_to "Home Page", root_path %></h5>
+<h4><%= link_to "Home Page", root_path %></h4>
