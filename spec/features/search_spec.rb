@@ -12,7 +12,8 @@ RSpec.feature "Users can search for dogs" do
     
     fill_in "Zip Code", with: dog.location
     fill_in "Breed", with: dog.breed
-    find(:css, "#title_age_baby").set(true)
+    #find(:css, "#title_age_baby").set(true)
+    page.choose dog.title_age
     fill_in "Dog Gender", with: dog.gender
     click_button "Search for Dogs"
 
