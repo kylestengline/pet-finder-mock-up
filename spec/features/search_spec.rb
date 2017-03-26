@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Users can search for dogs" do
-  let(:dog) {Dog.create(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", gender: "female", location: "92603" )}
+  let(:dog) {Dog.create(name: "Allen", age: 2, breed: "Corgi", title_age: "baby", gender: "female", location: "92603" )}
 
   scenario "dog search returns users search params" do
     visit root_path
@@ -12,13 +12,13 @@ RSpec.feature "Users can search for dogs" do
     
     fill_in "Zip Code", with: dog.location
     fill_in "Breed", with: dog.breed
-    page.choose dog.title_age
+    find(:css, "#title_age_baby").set(true)
     fill_in "Dog Gender", with: dog.gender
     click_button "Search for Dogs"
 
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
-    expect(page).to have_link "Home Page"
     expect(page).to have_content dog.breed
+    expect(page).not_to have_link "Home Page"
   end
 end
