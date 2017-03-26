@@ -15,13 +15,13 @@
 
       <div class="dog-age">
         <p class="age-name">Choose an Age:</p>
-        <%= radio_button_tag :title_age, "baby" %>
+        <%= radio_button_tag :title_age, "baby", id: "age-baby" %>
         <%= label_tag :title_age_baby, "Baby: 0-2 years", class: "age-baby" %>
         <br/>
-        <%= radio_button_tag :title_age, "young" %>
+        <%= radio_button_tag :title_age, "young", id: "age-young" %>
         <%= label_tag :title_age_young, "Young: 3-5 years", class: "age-young" %>
         <br/>
-        <%= radio_button_tag :title_age, "adult" %>
+        <%= radio_button_tag :title_age, "adult", id: "age-adult" %>
         <%= label_tag :title_age_adult, "Adult: 6-8 years", class: "age-adult" %>
       </div>
 
