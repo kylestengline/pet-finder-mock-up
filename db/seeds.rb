@@ -41,6 +41,19 @@ Dog.create!([
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
     color: "white, black",
     birth_date: Faker::Date.birthday(1, 9)
+  },
+  { 
+    location: "92111",
+    name: Faker::Name.first_name,
+    age: 4,
+    title_age: "young",
+    breed: "german shepard",
+    gender: "female",
+    adoptable: true,
+    size: "large",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
+    color: "black",
+    birth_date: Faker::Date.birthday(1, 9)
   }
 ])
 
