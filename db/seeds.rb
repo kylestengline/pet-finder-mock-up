@@ -1,7 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
+# # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
@@ -21,6 +20,7 @@ Dog.create!([
     location: "92603",
     name: Faker::Name.first_name,
     age: 2,
+    title_age: "baby",
     breed: "Corgi" ,
     gender: "female",
     adoptable: true,
@@ -33,6 +33,7 @@ Dog.create!([
     location: "92603",
     name: Faker::Name.first_name,
     age: 7,
+    title_age: "adult",
     breed: "Husky",
     gender: "male",
     adoptable: true,
