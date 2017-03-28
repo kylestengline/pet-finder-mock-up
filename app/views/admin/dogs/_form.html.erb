@@ -1,0 +1,121 @@
+<div class="form-for-dogs">
+  <div class='row'>
+    <div class='col-md-12'>
+      <%= form_for([:admin, @dog], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <% if @dog.errors.any? %>
+          <div class="panel-danger col-md-offset-1">
+            <div class="panel-heading">
+               <h2 class="panel-title">
+                  <!-- going to show the error on the page for the user to see and pluralize it as well as count how many errors there are. -->
+                  <%= pluralize(@dog.errors.count, "error") %> 
+                     prohibited this dog from being added:
+               </h2>
+
+               <div class="panel-body">
+                 <ul>
+                   <% @dog.errors.full_messages.each do |msg| %>
+                     <li>
+                       <%= msg %>
+                     </li>
+                   <% end %>  
+                 </ul>
+               </div>
+             </div>
+           </div>
+         <% end %>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_name %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.text_field :dogs_name, class: 'form-control', placeholder: 'Name of Dog', autofocus: true %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dog_age %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.number_field :dog_age, class: 'form-control', placeholder: 'Dogs Age' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_breed %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.text_field :dogs_breed, class: 'form-control', placeholder: 'Dogs Breed' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_gender %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.radio_button("male", "female") %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_color %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.text_field :dogs_color, class: 'form-control', placeholder: 'Dogs Color' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_size %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.radio_button("small", "medium", "large") %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_adoptable %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.radio_button(true, false) %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_birth_date %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.text_field :dogs_birth_date, class: 'form-control', placeholder: 'Dogs Birth Date' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_photo %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.file_field_tag :dogs_photo, class: 'form-control' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_location %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.number_field :dogs_location, max: 0..5, class: 'form-control', placeholder: 'Zip Code' %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
+             <%= f.label :dogs_title_age %>
+           </div>
+           <div class='col-md-11'>
+             <%= f.radio_button("baby", "young", "adult") %>
+           </div>
+         </div>
+         <div class='form-group'>
+         <div class='col-md-offset-1 col-md-11'>
+           <%= f.submit class: "btn btn-primary btn-lg pull-right" %>
+         </div>
+       </div>
+     <% end %>
+  </div>
+</div>
