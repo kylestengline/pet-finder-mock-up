@@ -69,7 +69,7 @@ form.new_admin {
 }
 
 body {
-  background: url("../img/login-form.jpg") no-repeat;
+/*  background: url("../img/login-form.jpg") no-repeat; */
   background-size: cover;
 }
 

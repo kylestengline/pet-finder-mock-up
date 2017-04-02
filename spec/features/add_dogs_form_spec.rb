@@ -14,17 +14,17 @@ RSpec.feature "Adding Dogs" do
     click_link "Add a Dog for Adoption"
     expect(page).to have_current_path new_admin_dog_path
 
-    fill_in "Dogs Name", with: "Allen"
+    fill_in "Name of Dog", with: "Allen"
     fill_in "Age", with: 2
     fill_in "Breed", with: "Husky" 
-    fill_in "Gender", with: "female" 
+    choose "dog_gender_male" 
     fill_in "Color", with: "black, white, gray"
-    fill_in "Size", with: "large"
-    fill_in "Adoptable", with: true 
-    fill_in "Birth Date", with: "11/15/2015"
+    choose "dog_size_large"
+    choose "dog_adoptable_true" 
+    fill_in "Dogs Birth Date", with: "11/15/2015"
     fill_in "Photo", with: "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg" 
     fill_in "Location", with: "92603"
-    fill_in "Baby, Young or Adult", with: "Baby"
+    choose "dog_title_age_baby"
     
     click_on "Add Dog"
     
@@ -39,16 +39,17 @@ RSpec.feature "Adding Dogs" do
     click_link "Add a Dog for Adoption"
     expect(page).to have_current_path new_admin_dog_path
 
-    fill_in "Dogs Name", with: ""
+    fill_in "Name of Dog", with: ""
     fill_in "Age", with: "" 
     fill_in "Breed", with: "" 
-    fill_in "Gender", with: "" 
+    choose "dog_gender_male" 
     fill_in "Color", with: ""
-    fill_in "Size", with: ""
-    fill_in "Birth Date", with: ""
+    choose "dog_size_large"
+    choose "dog_adoptable_true" 
+    fill_in "Dogs Birth Date", with: ""
     fill_in "Photo", with: "" 
     fill_in "Location", with: ""
-    fill_in "Baby, Young or Adult", with: ""
+    choose "dog_title_age_baby"
     
     click_on "Add Dog"
     

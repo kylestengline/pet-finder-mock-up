@@ -25,90 +25,107 @@
          <% end %>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_name %>
+             <%= f.label :name %>
            </div>
            <div class='col-md-11'>
-             <%= f.text_field :dogs_name, class: 'form-control', placeholder: 'Name of Dog', autofocus: true %>
+             <%= f.text_field :name, class: 'form-control', placeholder: 'Name of Dog', autofocus: true %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dog_age %>
+             <%= f.label :age %>
            </div>
            <div class='col-md-11'>
-             <%= f.number_field :dog_age, class: 'form-control', placeholder: 'Dogs Age' %>
+             <%= f.number_field :age, max: 0..1, class: 'form-control', placeholder: 'Dogs Age' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_breed %>
+             <%= f.label :breed %>
            </div>
            <div class='col-md-11'>
-             <%= f.text_field :dogs_breed, class: 'form-control', placeholder: 'Dogs Breed' %>
+             <%= f.text_field :breed, class: 'form-control', placeholder: 'Dogs Breed' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_gender %>
+             <%= f.label :gender %>
            </div>
            <div class='col-md-11'>
-             <%= f.radio_button("male", "female") %>
+             <%= f.label :female %>
+             <%= f.radio_button "gender", "female" %>
+             <%= f.label :male %>
+             <%= f.radio_button "gender", "male" %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_color %>
+             <%= f.label :color %>
            </div>
            <div class='col-md-11'>
-             <%= f.text_field :dogs_color, class: 'form-control', placeholder: 'Dogs Color' %>
+             <%= f.text_field :color, class: 'form-control', placeholder: 'Dogs Color' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_size %>
+             <%= f.label :size %>
            </div>
            <div class='col-md-11'>
-             <%= f.radio_button("small", "medium", "large") %>
+             <%= f.label :small %>
+             <%= f.radio_button "size", "small" %>
+             <%= f.label :medium %>
+             <%= f.radio_button "size", "medium" %>
+             <%= f.label :large %>
+             <%= f.radio_button "size", "large" %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_adoptable %>
+             <%= f.label :adoptable %>
            </div>
            <div class='col-md-11'>
-             <%= f.radio_button(true, false) %>
+             <%= f.label :yes %>
+             <%= f.radio_button "adoptable", "true" %>
+             <%= f.label :no %>
+             <%= f.radio_button "adoptable", "false" %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_birth_date %>
+             <%= f.label :birth_date %>
            </div>
            <div class='col-md-11'>
-             <%= f.text_field :dogs_birth_date, class: 'form-control', placeholder: 'Dogs Birth Date' %>
+             <%= f.text_field :birth_date, class: 'form-control', placeholder: 'Dogs Birth Date' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_photo %>
+             <%= f.label :photo %>
            </div>
            <div class='col-md-11'>
-             <%= f.file_field_tag :dogs_photo, class: 'form-control' %>
+             <%= f.file_field :photo, class: 'form-control' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_location %>
+             <%= f.label :location %>
            </div>
            <div class='col-md-11'>
-             <%= f.number_field :dogs_location, max: 0..5, class: 'form-control', placeholder: 'Zip Code' %>
+             <%= f.number_field :location, max: 0..5, class: 'form-control', placeholder: 'Zip Code' %>
            </div>
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
-             <%= f.label :dogs_title_age %>
+             <%= f.label :title_age %>
            </div>
            <div class='col-md-11'>
-             <%= f.radio_button("baby", "young", "adult") %>
+             <!-- Have logic that autopopulates based on dogs age -->
+             <%= f.label :baby %>
+             <%= f.radio_button "title_age", "baby" %>
+             <%= f.label :young %>
+             <%= f.radio_button "title_age", "young" %>
+             <%= f.label :adult %>
+             <%= f.radio_button "title_age", "adult" %>
            </div>
          </div>
          <div class='form-group'>

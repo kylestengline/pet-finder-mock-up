@@ -1,3 +1,10 @@
 <h1>Add A Dog</h1>
 
-<%= render "form" %>
+<%= @dogs.each do |d| %>
+  <%= d.name %>
+  <%= d.age %>
+  <%= d.title_age %>
+  <%= d.gender %>
+  <%= d.photo %>
+<% end %>
+
