@@ -6,7 +6,16 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'support/spec_test_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 # Add additional requires below this line. Rails is not loaded until this point!
+
+RSpec.configure do |config|
+  config.include Rails::Controller::Testing::TestProcess
+  config.include Rails::Controller::Testing::TemplateAssertions
+  config.include Rails::Controller::Testing::Integration
+  config.include Devise::Test::ControllerHelpers, type: :controller
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

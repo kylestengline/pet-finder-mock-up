@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'gravtastic'
 gem 'devise'
 gem 'better_errors'
-gem 'rails-controller-testing'
 gem 'faker'
 
 group :development, :test do
@@ -44,6 +43,9 @@ group :development, :test do
   gem 'capybara', '~> 2.7.0'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'launchy'
 end
 
 group :development do
