@@ -10,7 +10,6 @@ FactoryGirl.define do
     f.gender { "female" }
     f.adoptable { true }
     f.size { "small" }
-    f.photo { "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg" }
     f.color { "white, black, orange" }
     f.birth_date { Faker::Date.birthday(1, 9) }
   end
