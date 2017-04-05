@@ -4,7 +4,7 @@
   <% @dogs.each do |d| %>
     <h2 class="dog-name"><%= d.name %></h2>
     <div class="dog-photo">
-      <%= image_tag d.photo %>
+      <%= image_tag d.photo, size: "250" %>
     </div>
     <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
     <% if d.gender.titleize == "Female" %>
