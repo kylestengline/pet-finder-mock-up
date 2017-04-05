@@ -3,7 +3,9 @@ class Dog < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   include Gravtastic
-  is_gravtastic!
+  gravtastic :secure => true,
+             :filetype => :jpg,
+             :size => 250
 
   def self.search(location, breed, title_age, gender) 
     return all unless location.present? || breed.present? || title_age.present? || gender.present?
