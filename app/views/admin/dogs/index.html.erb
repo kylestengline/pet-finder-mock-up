@@ -1,10 +1,19 @@
-<h1>Add A Dog</h1>
+<h1>Showing All Dogs</h1>
 
-<%= @dogs.each do |d| %>
-  <%= d.name %>
-  <%= d.age %>
-  <%= d.title_age %>
-  <%= d.gender %>
-  <%= d.photo %>
-<% end %>
-
+<div class="doge-info">
+  <% @dogs.each do |d| %>
+    <h2 class="dog-name"><%= d.name %></h2>
+    <div class="dog-photo">
+      <%= image_tag d.photo %>
+    </div>
+    <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
+    <% if d.gender.titleize == "Female" %>
+      <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+      <%= d.title_age %>
+    <% else %>
+      <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+      <%= d.title_age %>
+    <% end %>
+  <% end %>
+</div>
+<h4><%= link_to "Home Page", root_path %></h4>

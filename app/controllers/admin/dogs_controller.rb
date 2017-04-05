@@ -1,5 +1,7 @@
 class Admin::DogsController < ApplicationController
+
   def index
+    @dogs = Dog.all
   end
 
   def new

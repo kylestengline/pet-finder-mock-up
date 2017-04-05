@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'support/spec_test_helper'
 require 'factory_girl_rails'
 require 'support/factory_girl'
+require 'support/controller_macros'
 include Warden::Test::Helpers
 Warden.test_mode!
 # Add additional requires below this line. Rails is not loaded until this point!
