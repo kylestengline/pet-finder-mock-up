@@ -22,11 +22,11 @@ RSpec.feature "Adding Dogs" do
     choose "dog_size_large"
     choose "dog_adoptable_true" 
     fill_in "Dogs Birth Date", with: "11/15/2015"
-    fill_in "Photo", with: "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg" 
+    fill_in "Insert Photo URL Here", with: "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg" 
     fill_in "Location", with: "92603"
     choose "dog_title_age_baby"
     
-    click_on "Add Dog"
+    click_on "Create Dog"
     
     expect(page).to have_content "Dog added successfully."
     expect(page).to have_current_path admin_dogs_path
@@ -51,10 +51,10 @@ RSpec.feature "Adding Dogs" do
     fill_in "Location", with: ""
     choose "dog_title_age_baby"
     
-    click_on "Add Dog"
+    click_on "Create Dog"
     
     expect(page).to have_content "Dog not added."
-    expect(page).to have_current_path new_admin_dog_path
+    expect(page).to have_current_path admin_dogs_path
 
   end
 end

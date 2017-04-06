@@ -9,6 +9,7 @@ FactoryGirl.define do
     f.breed { "Corgi" } 
     f.gender { "female" }
     f.adoptable { true }
+    f.photo { "https://siberianhusky.com/wp-content/uploads/2016/09/husky-pictures-4.jpg" }
     f.size { "small" }
     f.color { "white, black, orange" }
     f.birth_date { Faker::Date.birthday(1, 9) }
