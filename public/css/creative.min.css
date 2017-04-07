@@ -69,7 +69,7 @@ form.new_admin {
 }
 
 body {
-/*  background: url("../img/login-form.jpg") no-repeat; */
+  background: url("../img/login-form.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -123,13 +123,9 @@ body {
   font-size: 15px;
 }
 
-.age-range {
-  margin-bottom: 10px;
-  width: 50%;
-}
-
 .age-baby, .age-young, .age-adult {
   padding: 5px;
+  font-size: 20px;
 }
 
 .dog-search-submit-button {
