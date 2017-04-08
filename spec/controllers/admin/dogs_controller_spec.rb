@@ -2,9 +2,18 @@ require 'rails_helper'
 
 RSpec.describe Admin::DogsController, type: :controller do
 
-  describe "POST #create" do
-    let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
+  let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
 
+  describe "Sign In" do
+    it "allows admins to sign in" do
+      login_admin admin
+
+      expect(response).to have_http_status(:success)
+      get :index
+    end
+  end
+
+  describe "POST #create" do
     before (:each) do
       login_admin admin
     end
