@@ -1,5 +1,9 @@
 class Admin::DogsController < ApplicationController
 
+  before_action :authenticate_admin!, except: :index
+
+  before_action :set_dog, only: [:edit, :update]
+
   def index
     @dogs = Dog.all
   end
@@ -19,6 +23,27 @@ class Admin::DogsController < ApplicationController
     end
   end
 
+  def edit
+    if @dog.admin_id != current_admin
+      flash[:danger] = "You can only edit the dog you posted"
+      redirect_to admin_dogs_path
+    end
+  end
+
+  def update
+    if @dog.admin_id != current_admin
+      flash[:danger] = "You can only edit the dog you posted"
+      redirect_to admin_dogs_path
+    else
+      if @dog.update(dog_params)
+        flash[:success] = "Dog successfully updated"
+        redirect_to admin_dogs_path
+      else
+        flash.now[:danger] = "Dog unsuccessfully updated"
+        render :edit
+      end
+    end
+  end
 
   private
 
@@ -26,5 +51,9 @@ class Admin::DogsController < ApplicationController
       params.require(:dog)
         .permit(:name, :age, :breed, :gender, :adoptable,
                 :color, :size, :photo, :location, :title_age, :birth_date)
+    end
+
+    def set_dog
+      @dog = Dog.find(params[:id])
     end
 end

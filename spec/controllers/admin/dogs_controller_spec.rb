@@ -4,7 +4,7 @@ RSpec.describe Admin::DogsController, type: :controller do
 
   let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
 
-  before (:each) do
+  before(:each) do
     login_admin admin
     @dog_params = FactoryGirl.build(:dog).attributes
   end
@@ -21,7 +21,7 @@ RSpec.describe Admin::DogsController, type: :controller do
     #At least that's why I think I couldn't use dog in place of params
     context "as a signed in admin" do
       it "allows admins to create new dogs" do
-        post :create, params: { dog: @dog_params }
+        post :create, params: { dog: @dog_params, admin_id: admin.id }
         expect(response).to redirect_to admin_dogs_path
       end
     end
@@ -30,7 +30,7 @@ RSpec.describe Admin::DogsController, type: :controller do
   describe "Get #edit" do
     context "an admin can edit their dog" do
       it "renders the edit dog page" do
-        get :edit, params: { id: @dog_params }
+        get :edit, params: { id: @dog_params, admin_id: admin.id }
         expect(response).to render_template :edit
       end
     end

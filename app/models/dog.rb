@@ -20,4 +20,5 @@ class Dog < ApplicationRecord
   validates :adoptable, presence: true
   validates :size, presence: true
 
+  belongs_to :admin
 end
