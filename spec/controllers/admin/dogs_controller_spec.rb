@@ -21,7 +21,7 @@ RSpec.describe Admin::DogsController, type: :controller do
     #At least that's why I think I couldn't use dog in place of params
     context "as a signed in admin" do
       it "allows admins to create new dogs" do
-        post :create, params: { dog: @dog_params, admin_id: admin.id }
+        post :create, params: { dog: @dog_params }
         expect(response).to redirect_to admin_dogs_path
       end
     end
@@ -30,7 +30,9 @@ RSpec.describe Admin::DogsController, type: :controller do
   describe "Get #edit" do
     context "an admin can edit their dog" do
       it "renders the edit dog page" do
-        get :edit, params: { id: @dog_params, admin_id: admin.id }
+        byebug
+        get :edit, params: { id: @dog_params[:id] }
+        byebug
         expect(response).to render_template :edit
       end
     end

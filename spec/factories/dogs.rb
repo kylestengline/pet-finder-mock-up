@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :dog do |f|
-    f.id { rand(1..9) }
+#    f.id { rand(1..9) }
     f.location {"92603" }
     f.name { Faker::Name.first_name }
     f.age { 2 }
