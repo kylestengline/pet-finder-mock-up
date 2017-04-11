@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   resources :dogs, only: [:index, :show]
   get "searchs/index"
 
-  devise_scope :admin do
-    get "admins/sign_out" => "devise/sessions#destroy"
-  end
   namespace :admin do
     resources :dogs
   end
+
+  devise_scope :admin do
+    get "admins/sign_out" => "devise/sessions#destroy"
+  end
+
 end

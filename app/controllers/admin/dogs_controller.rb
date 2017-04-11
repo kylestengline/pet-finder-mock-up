@@ -13,7 +13,7 @@ class Admin::DogsController < ApplicationController
   end
 
   def create 
-    @dog = Dog.new(dog_params)
+    @dog = current_admin.dogs.build(dog_params)
     if @dog.save
       flash[:success] = "Dog added successfully."
       redirect_to admin_dogs_path
@@ -24,14 +24,14 @@ class Admin::DogsController < ApplicationController
   end
 
   def edit
-    if @dog.admin_id != current_admin
+    if @dog.admin != current_admin
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     end
   end
 
   def update
-    if @dog.admin_id != current_admin
+    if @dog.admin != current_admin
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     else
@@ -54,6 +54,8 @@ class Admin::DogsController < ApplicationController
     end
 
     def set_dog
+      # test fails, no route matches action edit
+      # id for dog is not showing
       @dog = Dog.find(params[:id])
     end
 end

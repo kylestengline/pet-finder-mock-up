@@ -2,7 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :dog do |f|
-#    f.id { rand(1..9) }
+    f.id { 3 }
     f.location {"92603" }
     f.name { Faker::Name.first_name }
     f.age { 2 }
@@ -14,5 +14,6 @@ FactoryGirl.define do
     f.size { "small" }
     f.color { "white, black, orange" }
     f.birth_date { Faker::Date.birthday(1, 9) }
+    f.admin_id { 1 }
   end
 end
