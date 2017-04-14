@@ -30,6 +30,7 @@ RSpec.describe Admin::DogsController, type: :controller do
   describe "Get #edit" do
     context "an admin can edit their dog" do
       it "renders the edit dog page" do
+        byebug
         get :edit, params: { dog: @dog_params }
         expect(response).to render_template :edit
       end

@@ -13,7 +13,7 @@ class Admin::DogsController < ApplicationController
   end
 
   def create 
-    @dog = current_admin.dogs.build(dog_params)
+    @dog = Dog.new(dog_params)
     if @dog.save
       flash[:success] = "Dog added successfully."
       redirect_to admin_dogs_path
