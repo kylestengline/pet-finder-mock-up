@@ -28,7 +28,7 @@ Dog.create!([
     photo: "http://3milliondogs.com/blog-assets-two/2014/08/corgicute.jpg",
     color: "white, black, orange",
     birth_date: Faker::Date.birthday(1, 9),
-    admin_id: 1 
+    admin_id: 1
   },
   { 
     location: "92603",
@@ -42,7 +42,7 @@ Dog.create!([
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
     color: "white, black",
     birth_date: Faker::Date.birthday(1, 9),
-    admin_id: 1 
+    admin_id: 1
   },
   { 
     location: "92111",

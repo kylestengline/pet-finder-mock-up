@@ -8,12 +8,14 @@
   <div class="dog-info-with-gender">
     <% if @dog.gender.titleize == "Female" %>
       <h4 class="dog-age">She is a <%= @dog.title_age %> that is <%= @dog.age %> years old.</h4>
-      <h4 class="dog-age">She is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
-      <h4 class="dog-age">Her birthday is<%= @dog.birth_date %>.</h4>
+      <h4 class="dog-size-color">She is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
+      <h4 class="dog-birth">Her birthday is <%= @dog.birth_date %>.</h4>
+      <h4 class="dog-location">She is located at <%= @dog.location %>.</h4>
     <% else %>
       <h4 class="dog-age">He is a <%= @dog.title_age %> that is <%= @dog.age %> years old.</h4>
-      <h4 class="dog-age">He is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
-      <h4 class="dog-age">His birthday is<%= @dog.birth_date %>.</h4>
+      <h4 class="dog-size-color">He is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
+      <h4 class="dog-birth">His birthday is <%= @dog.birth_date %>.</h4>
+      <h4 class="dog-location">He is located at <%= @dog.location %>.</h4>
     <% end %>
   </div>
   <% if @dog.adoptable == true %>
@@ -21,9 +23,7 @@
   <% else %>
     <h4>This Dog is not available for adoption<h4>
   <% end %>
-  <% if @dog.admin == current_admin && current_admin.admin_signed_in? %>
-    <%= link_to "Edit", edit_admin_dog_path(@dog) %>
-  <% end %>
+  <%= link_to "Edit", [:edit, :admin, @dog]  %>
 </div>
 <h4><%= link_to "Home Page", root_path %></h4>
 <link rel="stylesheet" href="/css/custom.css">

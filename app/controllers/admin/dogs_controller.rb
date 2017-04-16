@@ -1,6 +1,6 @@
 class Admin::DogsController < ApplicationController
 
-  before_action :authenticate_admin!, except: :index
+  before_action :authenticate_admin!, except: [:index, :show]
 
   before_action :set_dog, only: [:edit, :update, :show]
 
@@ -27,14 +27,14 @@ class Admin::DogsController < ApplicationController
   end
 
   def edit
-    if @dog.admin != current_admin
+    if @dog.admin_id != current_admin
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     end
   end
 
   def update
-    if @dog.admin != current_admin
+    if @dog.admin_id != current_admin
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     else
