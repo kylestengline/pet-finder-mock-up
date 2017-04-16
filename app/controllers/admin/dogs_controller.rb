@@ -2,10 +2,13 @@ class Admin::DogsController < ApplicationController
 
   before_action :authenticate_admin!, except: :index
 
-  before_action :set_dog, only: [:edit, :update]
+  before_action :set_dog, only: [:edit, :update, :show]
 
   def index
     @dogs = Dog.all
+  end
+
+  def show
   end
 
   def new

@@ -4,6 +4,11 @@ RSpec.describe Admin::DogsController, type: :controller do
 
   let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
 
+  let(:dog) {Dog.create!(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", 
+                         gender: "female", location: "92603", adoptable: true, size: "small", 
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg"
+                        )}
+
   before(:each) do
     login_admin admin
     @dog_params = FactoryGirl.build(:dog).attributes
@@ -30,8 +35,8 @@ RSpec.describe Admin::DogsController, type: :controller do
   describe "Get #edit" do
     context "an admin can edit their dog" do
       it "renders the edit dog page" do
-        byebug
-        get :edit, params: { dog: @dog_params }
+#        byebug
+        get :edit, params: { id: dog.id }
         expect(response).to render_template :edit
       end
     end
