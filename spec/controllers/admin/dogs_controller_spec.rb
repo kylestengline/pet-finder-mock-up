@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::DogsController, type: :controller do
 
   let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
+  let(:admin2) {Admin.create(email: "stuff@example.com", password: "passwords")}
 
   let(:dog) {Dog.create!(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", 
                          gender: "female", location: "92603", adoptable: true, size: "small", 
@@ -35,10 +36,18 @@ RSpec.describe Admin::DogsController, type: :controller do
   describe "Get #edit" do
     context "an admin can edit their dog" do
       it "renders the edit dog page" do
-        #byebug
         get :edit, params: { id: dog }
-        #byebug
         expect(response).to render_template :edit
+      end
+    end
+
+    context "an admin can only edit the dog they posted" do
+      it "redirects to the index page with error message" do
+        msg = "You can only edit the dog you posted"
+        login_admin admin2
+        get :edit, params: { id: dog }
+        expect(response).to redirect_to admin_dogs_path
+        expect(flash[:danger]).to eq msg 
       end
     end
   end
