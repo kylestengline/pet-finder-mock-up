@@ -23,7 +23,9 @@
   <% else %>
     <h4>This Dog is not available for adoption<h4>
   <% end %>
-  <%= link_to "Edit", [:edit, :admin, @dog]  %>
+  <% if is_admins_dog? %>
+    <%= link_to "Edit", [:edit, :admin, @dog]  %>
+  <% end %>
 </div>
 <h4><%= link_to "Home Page", root_path %></h4>
 <link rel="stylesheet" href="/css/custom.css">

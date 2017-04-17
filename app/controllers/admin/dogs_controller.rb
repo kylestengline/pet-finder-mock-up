@@ -27,14 +27,15 @@ class Admin::DogsController < ApplicationController
   end
 
   def edit
-    if @dog.admin_id != current_admin
+    if @dog.admin_id != current_admin.id
+      byebug
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     end
   end
 
   def update
-    if @dog.admin_id != current_admin
+    if @dog.admin_id != current_admin.id
       flash[:danger] = "You can only edit the dog you posted"
       redirect_to admin_dogs_path
     else
