@@ -39,7 +39,7 @@ before_action :authenticate_admin!, except: [:index, :show]
     else
       if @dog.update(dog_params)
         flash[:success] = "Dog successfully updated"
-        redirect_to admin_dogs_path
+        redirect_to admin_dog_path
       else
         flash.now[:danger] = "Dog unsuccessfully updated"
         render :edit

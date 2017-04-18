@@ -52,4 +52,18 @@ RSpec.describe Admin::DogsController, type: :controller do
     end
   end
 
+  describe "#update" do
+    let(:dog2) do
+      { location: "92111", size: "medium" }
+    end
+    context "an admin can update their dog" do
+      it "updates a dog and redirects to the show page" do
+        put :update, params: { id: dog, :dog => dog2  }
+        dog.reload
+        expect(response).to redirect_to admin_dog_path(dog)
+        expect(dog.location).to eq dog2[:location]
+        expect(dog.size).to eq dog2[:size]
+      end
+    end
+  end
 end
