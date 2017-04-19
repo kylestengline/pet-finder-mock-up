@@ -7,7 +7,6 @@
         </button>
         <% if admin_signed_in? %>
           <%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "navbar-brand page-scroll" %>
-          <%= link_to "Add a Dog for Adoption", new_admin_dog_path, class: "navbar-brand page-scroll" %>
         <% else %>
           <%= link_to "Sign Up", new_admin_registration_path, class: "navbar-brand page-scroll" %>
           <%= link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll" %>

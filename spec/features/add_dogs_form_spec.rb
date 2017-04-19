@@ -5,13 +5,13 @@ RSpec.feature "Adding Dogs" do
   let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
 
   before(:each) do
-    login(admin)
+    login admin
   end
 
   scenario "an admin can add a dog" do
     visit root_path
 
-    click_link "Add a Dog for Adoption"
+    click_link "Post a Dog for Adoption"
     expect(page).to have_current_path new_admin_dog_path
 
     fill_in "Name of Dog", with: "Allen"
@@ -36,7 +36,7 @@ RSpec.feature "Adding Dogs" do
   scenario "an admin can not add a dog" do
     visit root_path
 
-    click_link "Add a Dog for Adoption"
+    click_link "Post a Dog for Adoption"
     expect(page).to have_current_path new_admin_dog_path
 
     fill_in "Name of Dog", with: ""
