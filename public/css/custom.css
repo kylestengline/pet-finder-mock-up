@@ -33,7 +33,7 @@ form.new_admin {
 #admin_email, #admin_password, #admin_password_confirmation {
   margin-bottom: 25px;
   text-align: left;
-  width: 70%;
+  width: 30%;
 }
 
 .session-submit-button, .registration-submit-button, .dog-search-submit-button {
