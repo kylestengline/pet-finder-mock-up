@@ -1,12 +1,12 @@
 <div class="signup-form">
-  <h2 class="sign-up-title">Sign up</h2>
+  <h2 class="sign-up-title">Sign Up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="email-form">
       <%= f.label :email, class: "email-label" %><br />
-      <%= f.email_field :email, autofocus: true, class: "email-field" %>
+      <%= f.email_field :email, autofocus: true, class: "signup-email-field" %>
     </div>
 
     <div class="password-form">
@@ -14,16 +14,16 @@
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "password-field" %>
+      <%= f.password_field :password, autocomplete: "off", class: "signup-password-field" %>
     </div>
 
     <div class="password-confirm-form">
       <%= f.label :password_confirmation, class: "password-confirm-label" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "password-confirm-field" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "signup-password-confirm-field" %>
     </div>
 
     <div class="signup-button">
-      <%= f.submit "Sign up", class: "registration-submit-button" %>
+      <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-large" %>
     </div>
   <% end %>
 
@@ -31,4 +31,8 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
 <link rel="stylesheet" type="text/css" href="/css/custom.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

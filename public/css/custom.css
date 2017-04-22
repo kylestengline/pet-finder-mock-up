@@ -3,7 +3,7 @@ body {
   background-size: cover;
 }
 
-.login-form, .signup-form {
+.signup-form {
   left: 5%;
   margin-top: 5%;
   width: 45%;
@@ -30,7 +30,12 @@ form.new_admin {
   font-size: 20px;
 }
 
-#admin_email, #admin_password, #admin_password_confirmation {
+input.signup-email-field, input.signup-password-field, input.signup-password-confirm-field {
+  width: 65%;
+  margin-bottom: 25px;
+}
+
+input.email-field, input.password-field {
   margin-bottom: 25px;
   text-align: left;
   width: 30%;
@@ -39,6 +44,14 @@ form.new_admin {
 .session-submit-button, .registration-submit-button, .dog-search-submit-button {
   background-color: #0b73ce;
   color: white;
+}
+
+.signup-button {
+  width: 40%;
+}
+
+.login-button {
+  width: 20%;
 }
 
 .sign-up-button-devise-links, .login-button-devise-links {
