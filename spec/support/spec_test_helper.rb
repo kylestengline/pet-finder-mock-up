@@ -8,3 +8,21 @@ def login(admin)
   fill_in "Password", with: admin.password
   click_button "Log in"
 end
+
+def search_for_dogs
+  dog = Dog.create(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", birth_date: "11/12/2015",
+                         gender: "female", location: "92603", adoptable: true, size: "small", color: "white, orange",
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg"
+                   )
+
+  visit root_path
+
+  click_link "Find A Dog To Adopt"
+  
+  fill_in "Zip Code", with: dog.location
+  fill_in "Breed", with: dog.breed
+  choose 'title_age_baby' 
+  fill_in "Dog Gender", with: dog.gender
+  click_button "Search for Dogs"
+  
+end

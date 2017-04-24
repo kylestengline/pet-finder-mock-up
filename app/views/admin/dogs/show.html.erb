@@ -7,21 +7,21 @@
   <h4 class="breed-name"><%= @dog.name %> is a <%= @dog.breed %></h4>
   <div class="dog-info-with-gender">
     <% if @dog.gender.titleize == "Female" %>
-      <h4 class="dog-age">She is a <%= @dog.title_age %> that is <%= @dog.age %> years old.</h4>
-      <h4 class="dog-size-color">She is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
-      <h4 class="dog-birth">Her birthday is <%= @dog.birth_date %>.</h4>
-      <h4 class="dog-location">She is located at <%= @dog.location %>.</h4>
+      <h4 class="dog-age">Title Age: <%= @dog.title_age %><br><br> Age: <%= @dog.age %></h4>
+      <h4 class="dog-size-color">Dog Size: <%= @dog.size %><br><br> Color: <%= @dog.color %></h4>
+      <h4 class="dog-birth">Birth Date <%= @dog.birth_date %></h4>
+      <h4 class="dog-location">Location: <%= @dog.location %></h4>
     <% else %>
-      <h4 class="dog-age">He is a <%= @dog.title_age %> that is <%= @dog.age %> years old.</h4>
-      <h4 class="dog-size-color">He is a <%= @dog.size %> and is <%= @dog.color %>.</h4>
-      <h4 class="dog-birth">His birthday is <%= @dog.birth_date %>.</h4>
-      <h4 class="dog-location">He is located at <%= @dog.location %>.</h4>
+      <h4 class="dog-age">Title Age: <%= @dog.title_age %><br><br> Age: <%= @dog.age %></h4>
+      <h4 class="dog-size-color">Size: <%= @dog.size %><br><br> Color: <%= @dog.color %></h4>
+      <h4 class="dog-birth">Birth Date <%= @dog.birth_date %></h4>
+        <h4 class="dog-location">Location: <%= @dog.location %></h4>
     <% end %>
   </div>
   <% if @dog.adoptable == true %>
-    <h4>This Dog is available for adoption<h4>
+    <h4>Available for adoption<h4>
   <% else %>
-    <h4>This Dog is not available for adoption<h4>
+    <h4>Not available for adoption<h4>
   <% end %>
   <% if is_admins_dog? %>
     <%= link_to "Edit", [:edit, :admin, @dog]  %>

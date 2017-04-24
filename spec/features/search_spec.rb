@@ -25,6 +25,7 @@ RSpec.feature "Users can search for dogs" do
     click_button "Search for Dogs"
 
     expect(page).to have_content "Meet #{dog.name}"
+    expect(page).to have_link dog.name
     expect(page).to have_content "She is #{dog.age} years old."
     expect(page).to have_content dog.breed
   end
