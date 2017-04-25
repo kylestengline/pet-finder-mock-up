@@ -9,10 +9,10 @@
     <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
     <% if d.gender.titleize == "Female" %>
       <h4 class="dog-age">She is <%= d.age %> years old.</h4>
-      <%= d.title_age %>
+      <%= d.title_age.titleize %>
     <% else %>
       <h4 class="dog-age">He is <%= d.age %> years old.</h4>
-      <%= d.title_age %>
+      <%= d.title_age.titleize %>
     <% end %>
   <% end %>
 </div>
