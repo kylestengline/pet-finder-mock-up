@@ -37,6 +37,7 @@ gem 'better_errors'
 gem 'faker'
 gem 'database_cleaner'
 gem 'jquery-rails'
+gem 'bootstrap'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

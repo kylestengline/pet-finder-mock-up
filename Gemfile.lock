@@ -51,11 +51,16 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (8.0.0)
+    autoprefixer-rails (6.7.7.2)
+      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.7.1)
@@ -228,6 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap
   byebug
   capybara (~> 2.7.0)
   coffee-rails (~> 4.2)
