@@ -35,6 +35,12 @@
             <li>
               <%= link_to "Find A Dog To Adopt", dogs_path, class: "page-scroll" %>
             </li>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="page-scroll" href="#about">About Dog Adoption</a>
+                <%= link_to "More Info About Dog Adoption", dogs_adoption_path, class: "dog-adopt-info" %>
+              </li>
+            </ul>
             <li>
               <a class="page-scroll" href="#about">About Dog Adoption</a>
             </li>
@@ -54,3 +60,4 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
+<script type="text/javascript" src="/js/custom.js"></script>

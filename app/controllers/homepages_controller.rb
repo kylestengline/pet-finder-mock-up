@@ -3,4 +3,7 @@ class HomepagesController < ApplicationController
 
   def index
   end
+
+  def dogs_adoption
+  end
 end
