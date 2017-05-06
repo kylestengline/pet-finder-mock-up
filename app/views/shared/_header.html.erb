@@ -35,23 +35,31 @@
             <li>
               <%= link_to "Find A Dog To Adopt", dogs_path, class: "page-scroll" %>
             </li>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="page-scroll" href="#about">About Dog Adoption</a>
-                <%= link_to "More Info About Dog Adoption", dogs_adoption_path, class: "dog-adopt-info" %>
-              </li>
-            </ul>
             <li>
-              <a class="page-scroll" href="#about">About Dog Adoption</a>
+              <a class="page-scroll-adoption" href="#about">About Dog Adoption</a>
+              <ul class="about-dog-adoption">
+                <li><%= link_to "More About Dog Adoption", dogs_adoption_path, class: "dog-adopt-info" %></li>
+              </ul>
             </li>
             <li>
-              <a class="page-scroll" href="#services">Dog Care</a>
+              <a class="page-scroll-care" href="#services">Dog Care</a>
+              <ul class="dog-care">
+                <li><%= link_to "Dog Breeds", dogs_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Bringing a Dog Home", dogs_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Dog Training", dogs_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Dog Problems", dogs_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Dog Grooming", dogs_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Dog Care Videos", dogs_path, class: "dog-care-info" %></li>
+              </ul>
             </li>
             <li>
               <a class="page-scroll" href="#portfolio">Some of Our Pets</a>
             </li>
             <li>
-              <a class="page-scroll" href="#contact">Helping Dogs</a>
+              <a class="page-scroll-help" href="#contact">Helping Dogs</a>
+              <ul class="help-dogs">
+                <li><%= link_to "Get Involved", dogs_path, class: "dog-involvement" %></li>
+              </ul>
             </li>
           </ul>
         </div>
