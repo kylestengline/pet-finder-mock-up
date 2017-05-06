@@ -1,27 +1,27 @@
 "use strict";
 
 $(document).ready(function(){
-  console.log("loaded");
 
-  var atags = $(".page-scroll");
+
+  var atags = $(".navbar-right li");
   var adoptLi = $(".about-dog-adoption");
   var careLi = $(".dog-care");
+  var ourDogs = $(".our-pets");
   var helpLi = $(".help-dogs");
 
-  function dropdown() {
-    adoptLi.fadeIn(500);
-/*    careLi.fadeIn(500);
-    helpLi.fadeIn(500); */
-  }
-
-  function removeDropdown() {
-    adoptLi.fadeOut(500);
-   /* careLi.fadeOut(500);
-    helpLi.fadeOut(500);*/
-  }
+  helpLi.hide();
+  careLi.hide();
+  ourDogs.hide();
+  adoptLi.hide();
 
   atags.hover(
-    dropdown, removeDropdown
+    function(){
+      $(this).children('a').addClass("hover");
+      $(this).children('ul').show();
+    }, function() {
+      $(this).children('a').removeClass("hover");
+      $(this).children('ul').hide();
+    }
   );
 
 });
