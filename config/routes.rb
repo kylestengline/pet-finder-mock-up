@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :dogs
   end
 
-  get "dogs/adoption" 
+  get "dogs/adoption", as: "dogs_adoption"
 
   devise_scope :admin do
     get "admins/sign_out" => "devise/sessions#destroy"
