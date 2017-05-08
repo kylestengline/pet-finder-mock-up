@@ -29,7 +29,7 @@ RSpec.describe DogsController, type: :controller do
 
     context "#dogs_adoption" do
       it "renders more info about dog adoptions" do
-        get :dogs_adoption
+        get :adoption
       end
     end
 

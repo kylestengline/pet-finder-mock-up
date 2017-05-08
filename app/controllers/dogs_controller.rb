@@ -4,10 +4,11 @@ class DogsController < ApplicationController
     @dogs = Dog.all
   end
 
-  def dogs_adoption
-  end
-
   def show
     @dog = Dog.find(params[:id])
   end
+
+  def adoption
+  end
+
 end
