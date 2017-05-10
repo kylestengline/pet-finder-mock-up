@@ -33,6 +33,48 @@ RSpec.describe DogsController, type: :controller do
       end
     end
 
+    context "#dog_breeds" do
+      it "renders various dog breeds" do
+        get :breeds
+      end
+    end
+
+    context "#dog_breeds" do
+      it "renders the info about bringing dogs home" do
+        get :home
+      end
+    end
+
+    context "#dog_training" do
+      it "renders the info about bringing dogs home" do
+        get :training
+      end
+    end
+
+    context "#dog_problems" do
+      it "renders the info about bringing dogs home" do
+        get :problems
+      end
+    end
+
+    context "#dogs_grooming" do
+      it "renders the info about bringing dogs home" do
+        get :grooming
+      end
+    end
+
+    context "#videos" do
+      it "renders the info about bringing dogs home" do
+        get :videos
+      end
+    end
+
+    context "#get_involved" do
+      it "renders the how to get involved page"do
+        get :involvement
+      end
+    end
+
   end
 
 end

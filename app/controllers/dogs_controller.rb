@@ -11,4 +11,22 @@ class DogsController < ApplicationController
   def adoption
   end
 
+  def breeds
+  end
+
+  def home
+  end
+
+  def training
+  end
+
+  def problems
+  end
+
+  def grooming
+  end
+
+  def videos
+  end
+
 end

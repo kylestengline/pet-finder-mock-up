@@ -15,6 +15,24 @@ RSpec.feature "Showing content on the homepage" do
     expect(page).to have_link "Dog Care"
     expect(page).to have_link "Some of Our Pets"
     expect(page).to have_link "Helping Dogs"
+    expect(page).to have_link "About Dog Seeker"
+
+    expect(page).to have_selector('h1', text: 'Welcome To Dog Seeker')
+  end
+
+  scenario "the homepage has dropdown links on hover" do
+
+    visit root_path
+
+    expect(page).to have_link "More About Dog Adoption"
+    expect(page).to have_link "Dog Breeds"
+    expect(page).to have_link "Bring a Dog Home"
+    expect(page).to have_link "Dog Training"
+    expect(page).to have_link "Dog Problems"
+    expect(page).to have_link "Dog Grooming"
+    expect(page).to have_link "Dog Care Videos"
+    expect(page).to have_link "See All Dogs"
+    expect(page).to have_link "Get Involved"
 
   end
 
