@@ -5,12 +5,12 @@
 
       <div class="location">
         <% label_tag :location, class: "location-label" %>
-        <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area", required: true %>
+        <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
       </div>
 
       <div class="dog-breed">
         <% label_tag :breed, class: "breed-label" %>
-        <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field", required: true %>
+        <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field" %>
       </div>
 
       <div class="dog-age">
@@ -27,7 +27,7 @@
 
       <div class="dog-gender">
         <% label_tag :gender, class: "gender-label" %>
-        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field", required: true %>
+        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field" %>
       </div>
 
       <div class="submit-button-for-search">

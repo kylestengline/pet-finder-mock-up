@@ -7,10 +7,10 @@ class Dog < ApplicationRecord
              :filetype => :jpg,
              :size => 250
 
-  def self.search(location, breed, title_age, gender) 
-    return all unless location.present? || breed.present? || title_age.present? || gender.present?
-    where('location @@ ? AND breed @@ ? AND title_age @@ ? AND gender @@ ?', location, breed.downcase, title_age, gender.downcase)
-  end
+  scope :location, -> (location) { where location: location }
+  scope :breed, -> (breed) { where breed: breed }
+  scope :title_age, -> (title_age) { where title_age: title_age }
+  scope :gender, -> (gender) { where gender: gender }
 
   validates :name, presence: true
   validates :age, presence: true

@@ -1,11 +1,16 @@
 class SearchsController < ApplicationController
   
   def index
-    if params.has_key?(:location) || params.has_key?(:breed) || params.has_key?(:title_age) || params.has_key?(:gender)
-      @dogs = Dog.search(params[:location], params[:breed], params[:title_age], params[:gender]).all
-    else
-      @dogs = Dog.all.order("age ASC")
+    @dogs = Dog.where(nil)
+    filter_params(params).each do |key, value|
+      @dogs = @dogs.public_send(key, value) if value.present?
     end
   end
+
+  private
+
+    def filter_params(params)
+      params.slice(:location, :breed, :title_age, :gender)
+    end
 
 end
