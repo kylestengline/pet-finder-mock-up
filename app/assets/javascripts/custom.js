@@ -2,13 +2,14 @@
 
 $(document).ready(function(){
 
-
   var atags = $(".navbar-right li");
+  var dogSearch = $(".dog-search");
   var adoptLi = $(".about-dog-adoption");
   var careLi = $(".dog-care");
   var ourDogs = $(".our-pets");
   var helpLi = $(".help-dogs");
 
+  dogSearch.hide();
   helpLi.hide();
   careLi.hide();
   ourDogs.hide();

@@ -14,9 +14,7 @@ RSpec.feature "Users can search for dogs" do
   scenario "dog search returns users search params" do
     visit root_path
 
-    click_link "Find A Dog To Adopt"
-
-    expect(page).to have_current_path dogs_path
+    expect(page).to have_current_path root_path
     
     fill_in "Zip Code", with: dog.location
     fill_in "Breed", with: dog.breed
@@ -30,12 +28,25 @@ RSpec.feature "Users can search for dogs" do
     expect(page).to have_content dog.breed
   end
 
+  scenario "users search for location and title age only" do
+    visit root_path
+
+    expect(page).to have_current_path root_path
+    
+    fill_in "Zip Code", with: dog.location
+    choose 'title_age_baby' 
+    click_button "Search for Dogs"
+
+    expect(page).to have_content "Meet #{dog.name}"
+    expect(page).to have_link dog.name
+    expect(page).to have_content "She is #{dog.age} years old."
+    expect(page).to have_content dog.breed
+  end
+
   scenario "dog search returns no results" do
     visit root_path
 
-    click_link "Find A Dog To Adopt"
-
-    expect(page).to have_current_path dogs_path
+    expect(page).to have_current_path root_path
     
     fill_in "Zip Code", with: dog2.location
     fill_in "Breed", with: dog2.breed
