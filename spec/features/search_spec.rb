@@ -12,23 +12,18 @@ RSpec.feature "Users can search for dogs" do
                         )}
 
   scenario "dog search returns users search params" do
-    visit root_path
 
     expect(page).to have_current_path root_path
-    
-    fill_in "Zip Code", with: dog.location
-    fill_in "Breed", with: dog.breed
-    choose 'title_age_baby' 
-    fill_in "Dog Gender", with: dog.gender
-    click_button "Search for Dogs"
 
+    search_for_dogs
+    
     expect(page).to have_content "Meet #{dog.name}"
     expect(page).to have_link dog.name
     expect(page).to have_content "She is #{dog.age} years old."
     expect(page).to have_content dog.breed
   end
 
-  scenario "users search for location and title age only" do
+  scenario "users can search for location and title age only" do
     visit root_path
 
     expect(page).to have_current_path root_path

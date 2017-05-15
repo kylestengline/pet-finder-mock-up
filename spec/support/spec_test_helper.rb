@@ -17,8 +17,6 @@ def search_for_dogs
 
   visit root_path
 
-  click_link "Find A Dog To Adopt"
-  
   fill_in "Zip Code", with: dog.location
   fill_in "Breed", with: dog.breed
   choose 'title_age_baby' 
