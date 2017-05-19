@@ -3,6 +3,7 @@ class Dog < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   include Gravtastic
+
   gravtastic :secure => true,
              :filetype => :jpg,
              :size => 250
