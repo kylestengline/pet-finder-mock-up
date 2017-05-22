@@ -175,9 +175,8 @@ input[type=submit] {
 }
 
 /*Dropdowns Easing*/
-
-ul.navbar-right, a:hover,
-ul.navbar-right, a.hover {
+ul.navbar-right a:hover,
+ul.navbar-right a.hover {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -186,18 +185,26 @@ ul.navbar-right, a.hover {
   display: inline-block;
 }
 
+ul.navbar-right a:hover,
+ul.navbar-right a.page-scroll.hover {
+  background-color: black;
+  color: white;
+  display: block;
+}
+
+
 ul, a.hover, .nav>li>a:hover,
 .nav>li>a:focus {
   list-style-type: none;
   text-decoration: none;
 }
 
+/*More Info Pages*/
 .dog-adopt-info, .dog-care-info, 
 .all-our-pets, .dog-involvement {
   margin-left: -20px;
 }
 
-/*More Info Pages*/
 .info-page-heading {
   margin-top: 50px;
   color: white;
