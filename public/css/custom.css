@@ -176,8 +176,8 @@ input[type=submit] {
 
 /*Dropdowns Easing*/
 
-ul.navbar-right a:hover,
-ul.navbar-right a.hover {
+ul.navbar-right, a:hover,
+ul.navbar-right, a.hover {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -186,7 +186,36 @@ ul.navbar-right a.hover {
   display: inline-block;
 }
 
-/*not working*/
-nav>ul>li {
-  text-decoration: none;
+/*nothin*/
+ul, .navbar-default, a.hover, .nav>li>a:hover,
+.nav>li>a:focus {
+  text-decoration: unset;
+}
+
+/*More Info Pages*/
+.info-page-heading {
+  margin-top: 50px;
+  color: white;
+  position: relative;
+  margin-left: 20px;
+}
+
+th, td {
+  position: relative;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  color: white;
+  font-weight: 100;
+  background-color: rgba(0,0,0,.7);
+  border: 2px solid white;
+}
+
+th {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+td {
+  padding-top: 10px;
 }
