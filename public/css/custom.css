@@ -186,10 +186,10 @@ ul.navbar-right, a.hover {
   display: inline-block;
 }
 
-/*nothin*/
-ul, .navbar-default, a.hover, .nav>li>a:hover,
+ul, a.hover, .nav>li>a:hover,
 .nav>li>a:focus {
-  text-decoration: unset;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 /*More Info Pages*/
