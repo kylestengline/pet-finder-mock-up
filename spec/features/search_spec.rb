@@ -23,7 +23,7 @@ RSpec.feature "Users can search for dogs" do
     expect(page).to have_content dog.breed
   end
 
-  scenario "users can search for location and title age only" do
+  scenario "user searchs for location and title age only" do
     visit root_path
 
     expect(page).to have_current_path root_path

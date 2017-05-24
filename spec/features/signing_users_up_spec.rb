@@ -6,6 +6,9 @@ RSpec.feature "Signing Users Up" do
     visit root_path
 
     click_link "Sign Up"
+
+    expect(page).to have_selector("h2", text: "Sign Up")
+
     fill_in "Email", with: "admin@me.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
