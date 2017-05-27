@@ -174,27 +174,21 @@ input[type=submit] {
   padding-top: 10px;
 }
 
-/*Dropdowns Easing*/
-ul.navbar-right a:hover,
-ul.navbar-right a.hover {
+/*Dropdowns*/
+ul.navbar-right a.page-scroll:hover,
+ul.navbar-right a.page-scroll.hover {
+  background-color: #F05F40;
+  color: white;
+  display: block;
+}
+
+ul, a.hover, .nav>li>a:hover,
+.nav>li>a:focus {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  display: inline-block;
-}
-
-ul.navbar-right a:hover,
-ul.navbar-right a.page-scroll.hover {
-  background-color: black;
-  color: white;
-  display: block;
-}
-
-
-ul, a.hover, .nav>li>a:hover,
-.nav>li>a:focus {
   list-style-type: none;
   text-decoration: none;
 }

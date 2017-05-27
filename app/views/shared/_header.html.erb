@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <%= link_to "Find A Dog To Adopt","#{}", class: "page-scroll" %>
+              <%= link_to "Find A Dog To Adopt", root_path, class: "page-scroll" %>
               <ul class="dog-search">
                 <div class="search-for-dogs-form">
                   <%= form_tag searchs_index_path, method: "get", class: "search-dogs" do %>
