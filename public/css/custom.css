@@ -83,7 +83,7 @@ input.email-field, input.password-field {
 ul.dog-search {
   display: inline;
   position: absolute;
-  margin-left: -35%;
+  margin-left: -18%;
 }
 
 .location, .dog-breed, .dog-gender {
@@ -101,10 +101,10 @@ ul.dog-search {
 
 .search-for-dogs-form {
   background-color: rgb(255, 255, 255);
-  padding: 25px;
+  padding: 15px;
   display: inline-block;
   border-radius: 2px;
-  border: 4px solid;
+  border: 3px solid;
   width: 100%;
 }
 
