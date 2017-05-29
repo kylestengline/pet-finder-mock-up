@@ -1,17 +1,23 @@
 <h1 class="search-dogs-header">Search for that Perfect Pet</h1>
 <div class="doge-info">
-  <% @dogs.each do |d| %>
-    <h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2>
-    <div class="dog-photo">
-      <%= image_tag d.photo, size: "250" %>
-    </div>
-    <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
-    <% if d.gender.titleize == "Female" %>
-      <h4 class="dog-age">She is <%= d.age %> years old.</h4>
-    <% else %>
-      <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+  <table>
+    <% @dogs.each do |d| %>
+      <tr>
+        <td>
+          <h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2>
+          <div class="dog-photo">
+            <%= image_tag d.photo, size: "250" %>
+          </div>
+          <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
+          <% if d.gender.titleize == "Female" %>
+            <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+          <% else %>
+            <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-  <% end %>
+  </table>
 </div>
 
 <h4><%= link_to "Home Page", root_path %></h4>
