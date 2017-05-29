@@ -74,7 +74,5 @@ RSpec.describe DogsController, type: :controller do
         get :involvement
       end
     end
-
   end
-
 end
