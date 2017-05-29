@@ -37,9 +37,7 @@
               <ul class="dog-search">
                 <div class="search-for-dogs-form">
                   <%= form_tag searchs_index_path, method: "get", class: "search-dogs" do %>
-
                     <div id="form-searching-for-dogs">
-
                       <div class="location">
                         <% label_tag :location, class: "location-label" %>
                         <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
@@ -85,7 +83,7 @@
               <a class="page-scroll" href="#services">Dog Care</a>
               <ul class="dog-care">
                 <li><%= link_to "Dog Breeds", breeds_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Dog Home Care", dog_home_info_path, class: "dog-care-info" %></li>
+                <li><%= link_to "Home Care", dog_home_info_path, class: "dog-care-info" %></li>
                 <li><%= link_to "Dog Training", training_info_path, class: "dog-care-info" %></li>
                 <li><%= link_to "Dog Problems", problems_info_path, class: "dog-care-info" %></li>
                 <li><%= link_to "Dog Grooming", grooming_info_path, class: "dog-care-info" %></li>

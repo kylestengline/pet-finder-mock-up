@@ -101,7 +101,7 @@ ul.dog-search {
 
 .search-for-dogs-form {
   background-color: rgb(255, 255, 255);
-  padding: 15px;
+  padding: 10px;
   display: inline-block;
   border-radius: 2px;
   border: 3px solid;
@@ -197,6 +197,12 @@ ul, a.hover, .nav>li>a:hover,
 .dog-adopt-info, .dog-care-info, 
 .all-our-pets, .dog-involvement {
   margin-left: -20px;
+}
+
+#dog-adopt-info, #dog-breeds-info, 
+#bringing-dogs-home-info, #dog-training-info,
+#dog-problems-info, #dog-grooming-info, #dog-videos-info {
+  padding: 10px;
 }
 
 .info-page-heading {

@@ -28,7 +28,7 @@ RSpec.feature "Showing content on the homepage" do
 
     expect(page).to have_link "More About Dog Adoption"
     expect(page).to have_link "Dog Breeds"
-    expect(page).to have_link "Dog Home Care"
+    expect(page).to have_link "Home Care"
     expect(page).to have_link "Dog Training"
     expect(page).to have_link "Dog Problems"
     expect(page).to have_link "Dog Grooming"

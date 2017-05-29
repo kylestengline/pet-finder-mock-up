@@ -32,7 +32,7 @@ RSpec.feature "Dog Info Pages" do
   
   scenario "renders the bring a dog home page" do
 
-    click_link "Dog Home Care"
+    click_link "Home Care"
 
     expect(page).to have_current_path dog_home_info_path
     expect(page).to have_selector('h1', text: 'More Info about bringing a Dog Home')
