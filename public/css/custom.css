@@ -201,8 +201,12 @@ ul, a.hover, .nav>li>a:hover,
 
 #dog-adopt-info, #dog-breeds-info, 
 #bringing-dogs-home-info, #dog-training-info,
-#dog-problems-info, #dog-grooming-info, #dog-videos-info {
-  padding: 10px;
+#dog-problems-info, #dog-grooming-info, #dog-videos-info,
+#dog-helping-dogs-info {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  
 }
 
 .info-page-heading {
@@ -230,4 +234,5 @@ th {
 
 td {
   padding-top: 10px;
+  width: 50%;
 }
