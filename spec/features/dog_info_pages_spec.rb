@@ -15,6 +15,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('th', text: 'How To Adopt')
     expect(page).to have_selector('th', text: 'Where To Adopt')
     expect(page).to have_selector('th', text: 'When To Adopt')
+    expect(page).to have_selector('th', text: 'Cost of Adoption')
 
   end
 
@@ -27,6 +28,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('th', text: 'Various Breeds')
     expect(page).to have_selector('th', text: 'Where to find Different Breeds')
     expect(page).to have_selector('th', text: 'Breeders')
+    expect(page).to have_selector('th', text: 'Breed Personalities')
     
   end
   
@@ -38,7 +40,8 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('h1', text: 'More Info about bringing a Dog Home')
     expect(page).to have_selector('th', text: 'How to Bring a dog home')
     expect(page).to have_selector('th', text: 'Application Info')
-    expect(page).to have_selector('th', text: 'Who to Contact')
+    expect(page).to have_selector('th', text: 'How To Prepare Your Dog for Home')
+    expect(page).to have_selector('th', text: 'How To Prepare Your Home for a Dog')
     
   end
 
@@ -51,6 +54,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('th', text: 'Training Your Dog')
     expect(page).to have_selector('th', text: 'How To Train Your Dog')
     expect(page).to have_selector('th', text: 'Who To Contact To Get Training Help')
+    expect(page).to have_selector('th', text: 'Basic Dog Training Techniques')
     
   end
 
@@ -60,9 +64,10 @@ RSpec.feature "Dog Info Pages" do
 
     expect(page).to have_current_path problems_info_path
     expect(page).to have_selector('h1', text: 'Doggie Troubles')
-    expect(page).to have_selector('th', text: 'Having Trouble With Your New Pet?')
+    expect(page).to have_selector('th', text: 'Troubles With Your New Pet')
     expect(page).to have_selector('th', text: 'How To Handle A Troublesome Dog')
     expect(page).to have_selector('th', text: 'Who To Contact')
+    expect(page).to have_selector('th', text: 'Where To Get Your Dog Trained')
     
   end
 
@@ -75,6 +80,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('th', text: 'How To Groom Your Dog')
     expect(page).to have_selector('th', text: 'Where To Get Your Dog Groomed')
     expect(page).to have_selector('th', text: 'When To Groom')
+    expect(page).to have_selector('th', text: 'Best Practices for Grooming')
     
   end
 
@@ -86,7 +92,8 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('h1', text: 'Dog Videos and How To\'s')
     expect(page).to have_selector('th', text: 'Training Your Dog')
     expect(page).to have_selector('th', text: 'When To Train Your Dog')
-    expect(page).to have_selector('th', text: 'Who To Contact To Get Training Help')
+    expect(page).to have_selector('th', text: 'Getting Training Help')
+    expect(page).to have_selector('th', text: 'Training Tutorial')
     
   end
 
@@ -99,6 +106,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('th', text: 'How To Help With Dog Adoption')
     expect(page).to have_selector('th', text: 'Adoption Info')
     expect(page).to have_selector('th', text: 'Who To Contact')
+    expect(page).to have_selector('th', text: 'How To Donate')
     
   end
 end
