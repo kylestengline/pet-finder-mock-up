@@ -40,6 +40,20 @@
          </div>
          <div class='form-group'>
            <div class='control-label col-md-1'>
+             <%= f.label :title_age %>
+           </div>
+           <div class='col-md-11'>
+             <!-- Have logic that autopopulates based on dogs age -->
+             <%= f.radio_button "title_age", "baby" %>
+             <%= f.label :baby %>
+             <%= f.radio_button "title_age", "young" %>
+             <%= f.label :young %>
+             <%= f.radio_button "title_age", "adult" %>
+             <%= f.label :adult %>
+           </div>
+         </div>
+         <div class='form-group'>
+           <div class='control-label col-md-1'>
              <%= f.label :breed %>
            </div>
            <div class='col-md-11'>
@@ -51,10 +65,10 @@
              <%= f.label :gender %>
            </div>
            <div class='col-md-11'>
-             <%= f.label :female %>
              <%= f.radio_button "gender", "female" %>
-             <%= f.label :male %>
+             <%= f.label :female %>
              <%= f.radio_button "gender", "male" %>
+             <%= f.label :male %>
            </div>
          </div>
          <div class='form-group'>
@@ -70,12 +84,12 @@
              <%= f.label :size %>
            </div>
            <div class='col-md-11'>
-             <%= f.label :small %>
              <%= f.radio_button "size", "small" %>
-             <%= f.label :medium %>
+             <%= f.label :small %>
              <%= f.radio_button "size", "medium" %>
-             <%= f.label :large %>
+             <%= f.label :medium %>
              <%= f.radio_button "size", "large" %>
+             <%= f.label :large %>
            </div>
          </div>
          <div class='form-group'>
@@ -83,10 +97,10 @@
              <%= f.label :adoptable %>
            </div>
            <div class='col-md-11'>
-             <%= f.label :yes %>
              <%= f.radio_button "adoptable", "true" %>
-             <%= f.label :no %>
+             <%= f.label :yes %>
              <%= f.radio_button "adoptable", "false" %>
+             <%= f.label :no %>
            </div>
          </div>
          <div class='form-group'>
@@ -114,22 +128,8 @@
            </div>
          </div>
          <div class='form-group'>
-           <div class='control-label col-md-1'>
-             <%= f.label :title_age %>
-           </div>
-           <div class='col-md-11'>
-             <!-- Have logic that autopopulates based on dogs age -->
-             <%= f.label :baby %>
-             <%= f.radio_button "title_age", "baby" %>
-             <%= f.label :young %>
-             <%= f.radio_button "title_age", "young" %>
-             <%= f.label :adult %>
-             <%= f.radio_button "title_age", "adult" %>
-           </div>
-         </div>
-         <div class='form-group'>
          <div class='col-md-offset-1 col-md-11'>
-           <%= f.submit class: "btn btn-primary btn-lg pull-right" %>
+           <%= f.submit class: "btn btn-primary btn-lg pull-left" %>
          </div>
        </div>
      <% end %>

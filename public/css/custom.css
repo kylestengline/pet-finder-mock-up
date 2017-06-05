@@ -240,5 +240,17 @@ td {
 /* Add New Dog Form */
 h1.new-dog-form {
   margin: 50px;
-  color: black;
+}
+
+#dog_name, #dog_age, #dog_breed, #dog_color, 
+#dog_birth_date, #dog_location, .btn.btn-primary.btn-lg.pull-left {
+  width: 25%;
+}
+
+#dog_photo {
+  width: 50%;
+}
+
+label {
+  padding: 2px;
 }
