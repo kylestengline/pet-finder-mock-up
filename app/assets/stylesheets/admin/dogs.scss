@@ -1,3 +1,75 @@
 // Place all the styles related to the admin/dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin float-label-container {
+  display: block;
+  position: relative;
+}
+
+@mixin float-label {
+  label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    font-size: 75%;
+    opacity: 1;
+    transition: all .2s;
+  }
+}
+
+@mixin float-label-input {
+  &::placeholder {
+    opacity: 1;
+    transition: all .2s;
+  }
+
+  &:placeholder-shown:not(:focus)::placeholder {
+      opacity: 0;
+  }
+}
+
+@mixin float-label-scaled {
+  &:placeholder-shown:not(:focus) + * {
+    font-size: 150%;
+    opacity: .5;
+  }
+}
+
+.form-group {
+  @include float-label-container;
+
+  @include float-label;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+     
+  input, select {
+    @include float-label-input;
+    font-size: inherit;
+    padding-top: 1em;
+    margin-bottom: 2px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+
+   /* @include float-label-scaled {
+      top: .25em;
+    }*/
+
+    &:focus {
+      outline: none;
+      border-color: rgba(0,0,0,.5);
+    }
+  }
+
+  select {
+    padding-right: 1em;
+    background-size: 8px 10px;
+  }
+}
+
