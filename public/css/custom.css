@@ -246,14 +246,51 @@ h1.new-dog-form {
 }
 
 #dog_name, #dog_age, #dog_breed, #dog_color, 
-#dog_birth_date, #dog_location, .btn.btn-primary.btn-lg.pull-left {
-  width: 25%;
+#dog_birth_date, #dog_location, 
+.btn.btn-primary.btn-lg.pull-left, #dog_photo {
+  max-width: 95%;
+  float: left;
 }
 
-#dog_photo {
-  width: 50%;
+form.form-horizontal {
+  max-width: 550px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
 }
 
-div.has-float-label {
-  margin-left: 25px;
+div.col-md-offset-1 {
+  margin-left: 5.3%;
+}
+
+.form-horizontal input[type="text"],
+input[type="number"] {
+  -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  box-shadow: inset 0px 1px 0px 0px #3985B1;
+  border: 1px solid #17445E;
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 18px;
+  text-decoration: none;
+}
+
+div.has-left-label label, 
+input:placeholder-shown:not(:focus)+* {
+  padding-top: .25em;
+  left: .35em;
+}
+
+div.control-label {
+  width: 10%;
+}
+
+#dog_title_age_baby, #dog_title_age_young,
+#dog_title_age_adult, #dog_gender_female,
+#dog_gender_male, #dog_size_small, #dog_size_medium,
+#dog_size_large, #dog_adoptable_true, #dog_adoptable_false {
+  margin: 2%;
 }
