@@ -23,13 +23,13 @@
            </div>
          <% end %>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.text_field :name, class: 'form-control', placeholder: 'Name of Dog', autofocus: true %>
-             <%= f.label :name %>
+             <%= f.label :dogs_name %>
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.number_field :age, max: 0..1, class: 'form-control', placeholder: 'Dogs Age' %>
              <%= f.label :age %>
            </div>
@@ -49,7 +49,7 @@
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.text_field :breed, class: 'form-control', placeholder: 'Dogs Breed' %>
              <%= f.label :breed %>
            </div>
@@ -66,7 +66,7 @@
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.text_field :color, class: 'form-control', placeholder: 'Dogs Color' %>
              <%= f.label :color %>
            </div>
@@ -96,19 +96,19 @@
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.text_field :birth_date, class: 'form-control', placeholder: 'Dogs Birth Date' %>
              <%= f.label :birth_date %>
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.text_field :photo, placeholder: 'Insert Photo URL Here', class: 'form-control' %>
              <%= f.label :photo %>
            </div>
          </div>
          <div class='form-group'>
-           <div class='col-md-11'>
+           <div class='has-float-label'>
              <%= f.number_field :location, max: 0..5, class: 'form-control', placeholder: 'Zip Code' %>
              <%= f.label :location %>
            </div>
@@ -122,3 +122,4 @@
   </div>
 </div>
 <link href="/css/custom.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.2/dist/float-label.min.css">

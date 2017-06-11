@@ -37,7 +37,7 @@
   }
 }
 
-.form-group {
+.has-float-label {
   @include float-label-container;
 
   @include float-label;
@@ -57,10 +57,6 @@
     border-radius: 0;
     border-bottom: 2px solid rgba(0,0,0,.1);
 
-   /* @include float-label-scaled {
-      top: .25em;
-    }*/
-
     &:focus {
       outline: none;
       border-color: rgba(0,0,0,.5);
@@ -72,4 +68,3 @@
     background-size: 8px 10px;
   }
 }
-
