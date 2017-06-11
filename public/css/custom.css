@@ -10,8 +10,9 @@ body {
   height: 100%;
 }
 
-#admin_email, #admin_password, .login-title, .sign-up-title {
+#admin_email, #admin_password {
   color: black;
+  background-color: white;
 }
 
 .login-title, .sign-up-title {
@@ -33,6 +34,8 @@ form.new_admin {
 input.signup-email-field, input.signup-password-field, input.signup-password-confirm-field {
   width: 65%;
   margin-bottom: 25px;
+  background-color: white;
+  color: black;
 }
 
 input.email-field, input.password-field {
