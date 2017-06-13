@@ -245,25 +245,37 @@ h1.new-dog-form {
   margin: 50px;
 }
 
-#dog_name, #dog_age, #dog_breed, #dog_color, 
-#dog_birth_date, #dog_location, 
-.btn.btn-primary.btn-lg.pull-left, #dog_photo {
-  max-width: 95%;
-  float: left;
+.col-md-1 {
+  font-size: 20px;
+}
+
+.name-age-group > *, 
+.breed-color-group > *,
+.birth-date-location-group > * {
+  display: table-cell;
+  width: 65%;
+  padding-right: 5%;
+}
+
+.photo-group {
+  width: 90%;
+  margin-left: 2.5%;
+}
+
+.btn.btn-primary.btn-lg.pull-left {
+  max-width: 100%;
+  margin-left: -6.5%;
 }
 
 form.form-horizontal {
-  max-width: 550px;
+  max-width: 650px;
   background: #FAFAFA;
   padding: 30px;
-  margin: 50px auto;
+  margin: 0px auto;
+  margin-bottom: 5%;
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
   border: 6px solid #305A72;
-}
-
-div.col-md-offset-1 {
-  margin-left: 5.3%;
 }
 
 .form-horizontal input[type="text"],
