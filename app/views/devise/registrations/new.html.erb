@@ -1,25 +1,31 @@
-<div class="signup-form">
+<div id="signup-form">
   <h2 class="sign-up-title">Sign Up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="email-form">
-      <%= f.label :email, class: "email-label" %><br />
-      <%= f.email_field :email, autofocus: true, class: "signup-email-field" %>
+      <div class="has-float-label">
+        <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "signup-email-field" %>
+        <%= f.label :email, class: "email-label" %><br />
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+      </div>
     </div>
 
     <div class="password-form">
-      <%= f.label :password, class: "password-label" %>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "signup-password-field" %>
+      <div class="has-float-label">
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "signup-password-field" %>
+        <%= f.label :password, class: "password-label" %>
+      </div>
     </div>
 
     <div class="password-confirm-form">
-      <%= f.label :password_confirmation, class: "password-confirm-label" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "signup-password-confirm-field" %>
+      <div class="has-float-label">
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation", class: "signup-password-confirm-field" %>
+        <%= f.label :password_confirmation, class: "password-confirm-label" %><br />
+      </div>
     </div>
 
     <div class="signup-button">
@@ -33,6 +39,6 @@
 </div>
 
 <link rel="stylesheet" type="text/css" href="/css/custom.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.2/dist/float-label.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

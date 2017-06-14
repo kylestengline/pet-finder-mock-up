@@ -4,20 +4,13 @@ body {
 }
 
 /* Sign In, Sign Up */
-.signup-form {
-  left: 5%;
-  margin-top: 5%;
-  width: 45%;
-  height: 100%;
-}
-
 #admin_email, #admin_password {
   color: black;
   background-color: white;
   margin-bottom: 50px;
 }
 
-#login-form {
+#login-form, #signup-form {
   background-color: #fff;
   display: inline-block;
   padding: 25px;
@@ -26,6 +19,10 @@ body {
   margin-left: 28%;
   margin-top: 10%;
   border-radius: 5px solid #222;
+}
+
+#signup-form {
+  height: 550px;
 }
 
 .login-title, .sign-up-title {
@@ -37,15 +34,23 @@ body {
 }
 
 form.new_admin {
-  font-size: 24px;
+  font-size: 21px;
+}
+
+div.has-float-label input:placeholder-shown:not(:focus)+*, 
+.has-float-label select:placeholder-shown:not(:focus)+*, 
+.has-float-label textarea:placeholder-shown:not(:focus)+* {
+  top: 0;
 }
 
 input.signup-email-field, input.signup-password-field, 
 input.signup-password-confirm-field {
-  width: 65%;
+  width: 100%;
   margin-bottom: 25px;
   background-color: white;
+  text-align: left;
   color: black;
+  border: 1px solid black;
 }
 
 input.email-field, input.password-field {
@@ -62,11 +67,12 @@ input.email-field, input.password-field {
   color: white;
 }
 
-.signup-button {
-  width: 40%;
+.signup-button > * {
+  margin-top: 30px;
 }
 
-.login-button > * {
+.login-button > *,
+.signup-button > * {
   width: 100%;
   height: 40px;
   font-size: 21px;
