@@ -12,11 +12,11 @@ RSpec.feature "Signing Admins In" do
 
     click_link "Sign In"
 
-    expect(page).to have_selector('h2', text: 'Log In' )
+    expect(page).to have_selector('h2', text: 'Login' )
 
     fill_in "Email", with: admin.email
     fill_in "Password", with: admin.password
-    click_button "Log in"
+    click_button "Login"
 
     expect(page).to have_content "Signed in successfully."
     expect(page).to have_current_path root_path
@@ -29,11 +29,11 @@ RSpec.feature "Signing Admins In" do
 
     fill_in "Email", with: ""
     fill_in "Password", with: ""
-    click_button "Log in"
+    click_button "Login"
 
     expect(page).to have_current_path new_admin_session_path
     expect(page).to have_content "Invalid Email or password"
-    expect(page).to have_selector('h2', text: 'Log In' )
+    expect(page).to have_selector('h2', text: 'Login' )
     
   end
 end

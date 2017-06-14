@@ -6,7 +6,7 @@ def login(admin)
   click_link "Sign In"
   fill_in "Email", with: admin.email
   fill_in "Password", with: admin.password
-  click_button "Log in"
+  click_button "Login"
 end
 
 def search_for_dogs

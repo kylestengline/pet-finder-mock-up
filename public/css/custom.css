@@ -3,6 +3,7 @@ body {
   background-size: cover;
 }
 
+/* Sign In, Sign Up */
 .signup-form {
   left: 5%;
   margin-top: 5%;
@@ -13,25 +14,34 @@ body {
 #admin_email, #admin_password {
   color: black;
   background-color: white;
+  margin-bottom: 50px;
+}
+
+#login-form {
+  background-color: #fff;
+  display: inline-block;
+  padding: 25px;
+  width: 650px;
+  height: 450px;
+  margin-left: 28%;
+  margin-top: 10%;
+  border-radius: 5px solid #222;
 }
 
 .login-title, .sign-up-title {
   font-size: 40px;
-  margin-top: 40px;
-  margin-left: 45px;
-  margin-bottom: -40px;
-  padding: 20px;
-  text-align: left;
+  margin-top: 10px;
+  margin-left: 40%;
   color: black;
+  font-weight: 700;
 }
 
 form.new_admin {
-  margin-top: 10%;
-  margin-left: 10%;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-input.signup-email-field, input.signup-password-field, input.signup-password-confirm-field {
+input.signup-email-field, input.signup-password-field, 
+input.signup-password-confirm-field {
   width: 65%;
   margin-bottom: 25px;
   background-color: white;
@@ -41,10 +51,13 @@ input.signup-email-field, input.signup-password-field, input.signup-password-con
 input.email-field, input.password-field {
   margin-bottom: 25px;
   text-align: left;
-  width: 30%;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
 }
 
-.session-submit-button, .registration-submit-button, .dog-search-submit-button {
+.session-submit-button, .registration-submit-button, 
+.dog-search-submit-button {
   background-color: #0b73ce;
   color: white;
 }
@@ -53,14 +66,16 @@ input.email-field, input.password-field {
   width: 40%;
 }
 
-.login-button {
-  width: 20%;
+.login-button > * {
+  width: 100%;
+  height: 40px;
+  font-size: 21px;
 }
 
 .sign-up-button-devise-links, .login-button-devise-links {
-  font-size: 20px;
+  font-size: 21px;
   color: black;
-  margin: 7%;
+  margin: 0%;
 }
 
 .links {
