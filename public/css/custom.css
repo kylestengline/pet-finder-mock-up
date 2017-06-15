@@ -3,6 +3,8 @@ body {
   background-size: cover;
 }
 
+
+
 /* Sign In, Sign Up */
 #admin_email, #admin_password {
   margin-bottom: 50px;
@@ -210,6 +212,10 @@ ul, a.hover, .nav>li>a:hover,
   transition: all 0.5s ease;
   list-style-type: none;
   text-decoration: none;
+}
+
+li>ul, ul.dog-search {
+  display: none; 
 }
 
 /*More Info Pages*/
