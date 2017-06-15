@@ -3,8 +3,6 @@ body {
   background-size: cover;
 }
 
-
-
 /* Sign In, Sign Up */
 #admin_email, #admin_password {
   margin-bottom: 50px;
