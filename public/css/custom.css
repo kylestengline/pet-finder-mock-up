@@ -5,8 +5,6 @@ body {
 
 /* Sign In, Sign Up */
 #admin_email, #admin_password {
-  color: black;
-  background-color: white;
   margin-bottom: 50px;
 }
 
@@ -18,7 +16,7 @@ body {
   height: 450px;
   margin-left: 28%;
   margin-top: 10%;
-  border-radius: 5px solid #222;
+  border: 5px solid #222;
 }
 
 #signup-form {
@@ -37,10 +35,8 @@ form.new_admin {
   font-size: 21px;
 }
 
-div.has-float-label input:placeholder-shown:not(:focus)+*, 
-.has-float-label select:placeholder-shown:not(:focus)+*, 
-.has-float-label textarea:placeholder-shown:not(:focus)+* {
-  top: 0;
+div.has-float-label input {
+  padding-top: 1.5em;
 }
 
 input.signup-email-field, input.signup-password-field, 
@@ -57,7 +53,6 @@ input.email-field, input.password-field {
   margin-bottom: 25px;
   text-align: left;
   width: 100%;
-  padding: 10px;
   border: 1px solid black;
 }
 
