@@ -231,23 +231,32 @@ li>ul, ul.dog-search {
 
 th, td {
   position: relative;
-  padding-right: 30px;
-  padding-left: 30px;
   padding-bottom: 15px;
   color: white;
   font-weight: 100;
-  background-color: rgba(240, 95, 64, 0.8); 
-  border: 2px solid white;
+  padding-right: 100px;
+  left: 100px;
 }
 
 th {
   font-size: 25px;
-  padding-top: 10px;
 }
 
 td {
-  padding-top: 10px;
   width: 50%;
+}
+
+iframe {
+  border: 5px solid white;
+  background-color: #222;
+}
+
+.first-row {
+  margin-top: 2%;
+}
+
+.second-row {
+  margin-top: 5%;
 }
 
 /* Add New Dog Form */
