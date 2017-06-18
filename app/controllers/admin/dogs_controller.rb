@@ -5,6 +5,7 @@ class Admin::DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    @dog = Dog.new
   end
 
   def show
@@ -56,8 +57,6 @@ class Admin::DogsController < ApplicationController
     end
 
     def set_dog
-      # test fails, no route matches action edit
-      # id for dog is not showing
       @dog = Dog.find(params[:id])
     end
 end
