@@ -1,5 +1,5 @@
 def login(admin)
-  admin = Admin.create(email: "me@me.com", password: "password")
+  admin = Admin.create(email: "admin@example.com", password: "password")
 
   visit root_path
 
