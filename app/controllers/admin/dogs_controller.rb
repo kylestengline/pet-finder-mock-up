@@ -5,7 +5,7 @@ class Admin::DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
-    @dog = Dog.new
+#    @dog = Dog.new
   end
 
   def show

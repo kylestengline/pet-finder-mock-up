@@ -35,10 +35,6 @@ form.new_admin {
   font-size: 21px;
 }
 
-div.has-float-label input {
-  padding-top: 1.5em;
-}
-
 input.signup-email-field, input.signup-password-field, 
 input.signup-password-confirm-field {
   width: 100%;
