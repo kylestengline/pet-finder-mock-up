@@ -43,7 +43,7 @@ RSpec.feature "Showing content on the homepage" do
 
     expect(page).to have_link "Sign Out"
     expect(page).to have_link "Post a Dog for Adoption"
-    expect(page).to have_link "My Dogs"
+    expect(page).to have_link "All Dogs"
 
     expect(page).to have_current_path root_path
   end

@@ -1,8 +1,4 @@
 <h1>Showing All Dogs for <%= current_admin.email %></h1>
-
-<!-- @dogs.admin_id is nil -->
-<!--<#% byebug %>
-<#% if current_admin.id == @dogs.admin_id %> -->
   <div class="doge-info">
     <% @dogs.each do |d| %>
       <h2 class="dog-name"><%= link_to d.name, admin_dog_path(d) %></h2>
@@ -19,6 +15,5 @@
       <% end %>
     <% end %>
   </div>
-  <!--<#% end %>-->
 <h4><%= link_to "Home Page", root_path %></h4>
 <link rel="stylesheet" href="/css/custom.css">

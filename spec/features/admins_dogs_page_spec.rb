@@ -13,7 +13,7 @@ RSpec.feature "Admins Dog Page" do
   scenario "personalized admin page for showing all dogs" do
     login admin
 
-    click_link "My Dogs"
+    click_link "All Dogs"
     expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin.email }")
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
@@ -32,7 +32,7 @@ RSpec.feature "Admins Dog Page" do
     fill_in "Password", with: admin2.password
     click_button "Login"
 
-    click_link "My Dogs"
+    click_link "All Dogs"
     expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin2.email }")
     expect(page).not_to have_content dog.name
     expect(page).not_to have_content dog.age
