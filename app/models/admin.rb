@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 #  has_many :dogs
+  has_one :profile
 end
