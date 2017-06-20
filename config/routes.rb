@@ -15,13 +15,10 @@ Rails.application.routes.draw do
 
   get "searchs/index"
 
-  namespace :profile do
-    resources :admin
+  namespace :admin do
+    resources :dogs
+    resources :profiles
   end
-
-    namespace :admin do
-      resources :dogs
-    end
 
 
   devise_scope :admin do

@@ -1,10 +1,11 @@
 class Admin::ProfilesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
-  before_action :set_admin, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:show, :edit, :update]
 
   def index
     @profile = Profile
+    @dogs = Dog.all
   end
 
   def show
@@ -50,6 +51,8 @@ class Admin::ProfilesController < ApplicationController
   private
 
     def profile_params
+      params.require(:admin)
+        .permit(:email, :encrypted_password)
     end
 
     def set_profile
