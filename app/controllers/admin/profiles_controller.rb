@@ -1,14 +1,15 @@
 class Admin::ProfilesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
-  before_action :set_profile, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:edit, :update]
 
   def index
-    @profile = Profile
+    @profiles = Profile.all
     @dogs = Dog.all
   end
 
   def show
+    @dog = Dog.where(admin_id: params[:id])
   end
 
   def new
@@ -56,6 +57,6 @@ class Admin::ProfilesController < ApplicationController
     end
 
     def set_profile
-      @profile = Profile.find(params[:id])
+      @admin = Admin.find(params[:id])
     end
 end
