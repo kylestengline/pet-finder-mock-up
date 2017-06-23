@@ -12,7 +12,7 @@ end
 def search_for_dogs
   dog = Dog.create!(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", birth_date: "11/12/2015",
                          gender: "female", location: "92603", adoptable: true, size: "small", color: "white, orange",
-                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg"
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg", admin_id: admin.id
                    )
 
   visit root_path
