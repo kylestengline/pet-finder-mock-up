@@ -19,6 +19,7 @@ RSpec.feature "Admins Dog Page" do
     login admin
 
     click_link "All Dogs"
+    click_link "My Dogs"
     expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin.email }")
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
@@ -26,7 +27,7 @@ RSpec.feature "Admins Dog Page" do
     expect(page).to have_content dog.title_age.titleize
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(dog.photo)}')]"
 
-    expect(page).to have_current_path admin_dogs_path
+    expect(page).to have_current_path admin_path(admin.id)
   end
 
   scenario "personalized admin page for showing all dogs" do
@@ -45,7 +46,7 @@ RSpec.feature "Admins Dog Page" do
     expect(page).not_to have_content dog.title_age.titleize
     expect(page).not_to have_xpath "//img[contains(@src,'#{File.basename(dog.photo)}')]"
 
-    expect(page).to have_current_path admin_dogs_path
+    expect(page).to have_current_path admin_path(admin.id)
   end
 end
 

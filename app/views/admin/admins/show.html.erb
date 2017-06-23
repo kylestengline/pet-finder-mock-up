@@ -1,0 +1,29 @@
+<h1>Meet <%= @admin_dog.name %></h1>
+
+<div class="doge-info">
+  <div class="dog-photo">
+    <%= image_tag @admin_dog.photo, size: 250 %>
+  </div>
+  <h4 class="breed-name"><%= @admin_dog.name %> is a <%= @admin_dog.breed %></h4>
+  <div class="dog-info-with-gender">
+    <% if @admin_dog.gender.titleize == "Female" %>
+      <h4 class="dog-age">Title Age: <%= @admin_dog.title_age.titleize %><br><br> Age: <%= @admin_dog.age %></h4>
+      <h4 class="dog-size-color">Dog Size: <%= @admin_dog.size.titleize %><br><br> Color: <%= @admin_dog.color.titleize %></h4>
+      <h4 class="dog-birth">Birth Date <%= @admin_dog.birth_date %></h4>
+      <h4 class="dog-location">Location: <%= @admin_dog.location %></h4>
+    <% else %>
+      <h4 class="dog-age">Title Age: <%= @admin_dog.title_age.titleize %><br><br> Age: <%= @admin_dog.age %></h4>
+      <h4 class="dog-size-color">Size: <%= @admin_dog.size.titleize %><br><br> Color: <%= @admin_dog.color.titleize %></h4>
+      <h4 class="dog-birth">Birth Date <%= @admin_dog.birth_date %></h4>
+      <h4 class="dog-location">Location: <%= @admin_dog.location %></h4>
+    <% end %>
+  </div>
+  <% if @admin_dog.adoptable == true %>
+    <h4>Available for adoption<h4>
+  <% else %>
+    <h4>Not available for adoption<h4>
+  <% end %>
+  <%= link_to "Edit", [:edit, :admin, @admin_dog]  %>
+</div>
+<h4><%= link_to "Home Page", root_path %></h4>
+<link rel="stylesheet" href="/css/custom.css">

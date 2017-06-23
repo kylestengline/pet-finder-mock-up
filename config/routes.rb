@@ -15,10 +15,10 @@ Rails.application.routes.draw do
 
   get "searchs/index"
 
+    resources :admins
   namespace :admin do
     resources :dogs
   end
-
 
   devise_scope :admin do
     get "admins/sign_out" => "devise/sessions#destroy"

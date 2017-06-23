@@ -8,6 +8,7 @@ class Admin::DogsController < ApplicationController
   end
 
   def show
+    @admin_dogs = Dog.where(admin_id: params[:id])
   end
 
   def new
