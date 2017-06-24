@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   get "searchs/index"
 
-    resources :admins
+  namespace :admin do
+    resources :admins, only: [:index, :show]
+  end
+
   namespace :admin do
     resources :dogs
   end

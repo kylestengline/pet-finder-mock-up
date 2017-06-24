@@ -1,3 +1,4 @@
+<h1>Showing All Dogs for <%= current_admin.email %></h1>
 <h1>Meet <%= @admin_dog.name %></h1>
 
 <div class="doge-info">
@@ -25,5 +26,4 @@
   <% end %>
   <%= link_to "Edit", [:edit, :admin, @admin_dog]  %>
 </div>
-<h4><%= link_to "Home Page", root_path %></h4>
 <link rel="stylesheet" href="/css/custom.css">

@@ -1,7 +1,7 @@
 <h1>Showing All Dogs</h1>
 <div class="doge-info">
   <% @dogs.each do |d| %>
-    <h2 class="dog-name"><%= link_to d.name, admin_path(d) %></h2>
+    <h2 class="dog-name"><%= link_to d.name, admin_dogs_path(d) %></h2>
     <div class="dog-photo">
       <%= image_tag d.photo, size: 250 %>
     </div>
@@ -15,6 +15,5 @@
     <% end %>
   <% end %>
 </div>
-<h4><%= link_to "Home Page", root_path %></h4>
-<h4><%= link_to "My Dogs", admin_path(@dogs) %></h4>
+<h4><%= link_to "My Dogs", admin_admin_path(@dogs) %></h4>
 <link rel="stylesheet" href="/css/custom.css">
