@@ -1,19 +1,20 @@
-<h1>Showing All Dogs</h1>
-<div class="doge-info">
-  <% @dogs.each do |d| %>
-    <h2 class="dog-name"><%= link_to d.name, admin_dogs_path(d) %></h2>
-    <div class="dog-photo">
-      <%= image_tag d.photo, size: 250 %>
-    </div>
-    <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
-    <% if d.gender.titleize == "Female" %>
-      <h4 class="dog-age">She is <%= d.age %> years old.</h4>
-      <%= d.title_age.titleize %>
-    <% else %>
-      <h4 class="dog-age">He is <%= d.age %> years old.</h4>
-      <%= d.title_age.titleize %>
+<h1>Showing All Dogs for <%= current_admin.email %></h1>
+<% if @admins_dogs.any? %>
+  <div class="doge-info">
+    <% @admins_dogs.each do |d| %>
+      <h2 class="dog-name"><%= link_to d.name, admin_admin_path(d) %></h2>
+      <div class="dog-photo">
+        <%= image_tag d.photo, size: 250 %>
+      </div>
+      <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
+      <% if d.gender.titleize == "Female" %>
+        <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+        <%= d.title_age.titleize %>
+      <% else %>
+        <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+        <%= d.title_age.titleize %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-<h4><%= link_to "My Dogs", admin_admin_path(@dogs) %></h4>
+  </div>
+<% end %>
 <link rel="stylesheet" href="/css/custom.css">
