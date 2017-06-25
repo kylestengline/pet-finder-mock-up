@@ -4,6 +4,7 @@ RSpec.feature "Admins Dog Page" do
 
   let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
   let(:admin2) {Admin.create(email: "admin2@example.com", password: "password2")}
+  let(:admin3) {Admin.create(email: "admin3@example.com", password: "password3")}
 
   let!(:dog) {Dog.create(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", birth_date: "11/12/2015",
                        gender: "female", location: "92603", adoptable: true, size: "small", color: "white, orange",
@@ -27,6 +28,7 @@ RSpec.feature "Admins Dog Page" do
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(dog.photo)}')]"
 
     expect(page).to have_current_path admin_admins_path
+    click_link "Sign Out"
   end
 
   scenario "personalized admin page for showing all dogs" do
@@ -46,6 +48,30 @@ RSpec.feature "Admins Dog Page" do
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(dog2.photo)}')]"
 
     expect(page).to have_current_path admin_admins_path
+    click_link "Sign Out"
+  end
+
+  scenario "personalized admin page has no dogs to display" do
+    visit root_path
+
+    click_link "Sign In"
+    fill_in "Email", with: admin3.email
+    fill_in "Password", with: admin3.password
+    click_button "Login"
+
+    click_link "All Dogs"
+    expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin3.email }")
+
+    if !dog.present?
+      expect(page).to have_content dog.name
+      expect(page).to have_content dog.age
+      expect(page).to have_content dog.breed
+      expect(page).to have_content dog.title_age.titleize
+      expect(page).to have_xpath "//img[contains(@src,'#{File.basename(dog.photo)}')]"
+    else
+      expect(page).to have_selector("h2", text: "#{admin3.email} hasn't posted any dogs yet. Follow this link to post a dog for adoption.")
+    end
+    expect(page).to have_current_path admin_admins_path
+    click_link "Sign Out"
   end
 end
-
