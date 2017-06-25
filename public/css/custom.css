@@ -4,8 +4,9 @@ body {
 }
 
 /* Sign In, Sign Up */
-#admin_email, #admin_password {
+#admin_email, #admin_password, #admin_password_confirmation {
   margin-bottom: 50px;
+  padding-bottom: .5em;
 }
 
 #login-form, #signup-form {
