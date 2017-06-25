@@ -25,6 +25,19 @@ RSpec.feature "Users can search for dogs" do
     expect(page).to have_content dog.breed
   end
 
+  scenario "admins can search when signed in" do
+
+    expect(page).to have_current_path root_path
+
+    login admin
+    search_for_dogs
+    
+    expect(page).to have_content "Meet #{dog.name}"
+    expect(page).to have_link dog.name
+    expect(page).to have_content "She is #{dog.age} years old."
+    expect(page).to have_content dog.breed
+  end
+
   scenario "user searchs for location and title age only" do
     visit root_path
 

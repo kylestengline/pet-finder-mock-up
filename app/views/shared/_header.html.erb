@@ -1,110 +1,103 @@
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-        </button>
-        <% if admin_signed_in? %>
-          <%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "navbar-brand page-scroll" %>
-        <% else %>
-          <%= link_to "Sign Up", new_admin_registration_path, class: "navbar-brand page-scroll" %>
-          <%= link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll" %>
-        <% end %>
-          <%= link_to "Home", root_path, class: "navbar-brand page-scroll" %>
-      </div>
-
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
       <% if admin_signed_in? %>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to "Find A Dog To Adopt", dogs_path, class: "page-scroll" %>
-            </li>
-            <li>
-              <%= link_to "All Dogs", admin_admins_path, class: "page-scroll" %>
-            </li>
-            <li>
-              <%= link_to "Post a Dog for Adoption", new_admin_dog_path, class: "page-scroll" %>
-            </li>
-          </ul>
-        </div>
+        <%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "navbar-brand page-scroll" %>
       <% else %>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to "Find A Dog To Adopt", root_path, class: "page-scroll" %>
-              <ul class="dog-search">
-                <div class="search-for-dogs-form">
-                  <%= form_tag searchs_index_path, method: "get", class: "search-dogs" do %>
-                    <div id="form-searching-for-dogs">
-                      <div class="location">
-                        <% label_tag :location, class: "location-label" %>
-                        <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
-                      </div>
-
-                      <div class="dog-breed">
-                        <% label_tag :breed, class: "breed-label" %>
-                        <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field" %>
-                      </div>
-
-                      <div class="dog-age">
-                        <p class="age-name">Choose an Age:</p>
-                        <%= radio_button_tag :title_age, "baby", id: "age-baby" %>
-                        <%= label_tag :title_age_baby, "Baby: 0-2 years", class: "age-baby" %>
-                        <br/>
-                        <%= radio_button_tag :title_age, "young", id: "age-young" %>
-                        <%= label_tag :title_age_young, "Young: 3-5 years", class: "age-young" %>
-                        <br/>
-                        <%= radio_button_tag :title_age, "adult", id: "age-adult" %>
-                        <%= label_tag :title_age_adult, "Adult: 6-8 years", class: "age-adult" %>
-                      </div>
-
-                      <div class="dog-gender">
-                        <% label_tag :gender, class: "gender-label" %>
-                        <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field" %>
-                      </div>
-
-                      <div class="submit-button-for-search">
-                        <%= submit_tag "Search for Dogs", name: nil, class: "dog-search-submit-button" %>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </ul>
-            </li>
-            <li>
-              <a class="page-scroll" href="#about">About Dog Adoption</a>
-              <ul class="about-dog-adoption">
-                <li><%= link_to "More About Dog Adoption", adoption_info_path, class: "dog-adopt-info" %></li>
-              </ul>
-            </li>
-            <li>
-              <a class="page-scroll" href="#services">Dog Care</a>
-              <ul class="dog-care">
-                <li><%= link_to "Dog Breeds", breeds_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Home Care", dog_home_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Dog Training", training_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Dog Problems", problems_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Dog Grooming", grooming_info_path, class: "dog-care-info" %></li>
-                <li><%= link_to "Dog Care Videos", videos_path, class: "dog-care-info" %></li>
-              </ul>
-            </li>
-            <li>
-              <a class="page-scroll" href="#portfolio">Some of Our Pets</a>
-              <ul class="our-pets">
-                <li><%= link_to "See All Dogs", dogs_path, class: "all-our-pets" %></li>
-              </ul>
-            </li>
-            <li>
-              <a class="page-scroll" href="#contact">Helping Dogs</a>
-              <ul class="help-dogs">
-                <li><%= link_to "Get Involved", get_involved_path, class: "dog-involvement" %></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <%= link_to "Sign Up", new_admin_registration_path, class: "navbar-brand page-scroll" %>
+        <%= link_to "Sign In", new_admin_session_path, class: "navbar-brand page-scroll" %>
       <% end %>
+        <%= link_to "Home", root_path, class: "navbar-brand page-scroll" %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "Find A Dog To Adopt", searchs_index_path, class: "page-scroll" %>
+          <ul class="dog-search">
+            <div class="search-for-dogs-form">
+              <%= form_tag searchs_index_path, method: "get", class: "search-dogs" do %>
+                <div id="form-searching-for-dogs">
+                  <div class="location">
+                    <% label_tag :location, class: "location-label" %>
+                    <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
+                  </div>
+
+                  <div class="dog-breed">
+                    <% label_tag :breed, class: "breed-label" %>
+                    <%= text_field_tag :breed, params[:breed], placeholder: "Breed", class: "breed-text-field" %>
+                  </div>
+
+                  <div class="dog-age">
+                    <p class="age-name">Choose an Age:</p>
+                    <%= radio_button_tag :title_age, "baby", id: "age-baby" %>
+                    <%= label_tag :title_age_baby, "Baby: 0-2 years", class: "age-baby" %>
+                    <br/>
+                    <%= radio_button_tag :title_age, "young", id: "age-young" %>
+                    <%= label_tag :title_age_young, "Young: 3-5 years", class: "age-young" %>
+                    <br/>
+                    <%= radio_button_tag :title_age, "adult", id: "age-adult" %>
+                    <%= label_tag :title_age_adult, "Adult: 6-8 years", class: "age-adult" %>
+                  </div>
+
+                  <div class="dog-gender">
+                    <% label_tag :gender, class: "gender-label" %>
+                    <%= text_field_tag :gender, params[:gender], placeholder: "Dog Gender", class: "gender-text-field" %>
+                  </div>
+
+                  <div class="submit-button-for-search">
+                    <%= submit_tag "Search for Dogs", name: nil, class: "dog-search-submit-button" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </ul>
+        </li>
+        <% if admin_signed_in? %>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <li>
+            <%= link_to "All Dogs", admin_admins_path, class: "page-scroll" %>
+          </li>
+          <li>
+            <%= link_to "Post a Dog for Adoption", new_admin_dog_path, class: "page-scroll" %>
+          </li>
+        <% else %>
+          <li>
+            <a class="page-scroll" href="#about">About Dog Adoption</a>
+            <ul class="about-dog-adoption">
+              <li><%= link_to "More About Dog Adoption", adoption_info_path, class: "dog-adopt-info" %></li>
+            </ul>
+          </li>
+          <li>
+            <a class="page-scroll" href="#services">Dog Care</a>
+            <ul class="dog-care">
+              <li><%= link_to "Dog Breeds", breeds_info_path, class: "dog-care-info" %></li>
+              <li><%= link_to "Home Care", dog_home_info_path, class: "dog-care-info" %></li>
+              <li><%= link_to "Dog Training", training_info_path, class: "dog-care-info" %></li>
+              <li><%= link_to "Dog Problems", problems_info_path, class: "dog-care-info" %></li>
+              <li><%= link_to "Dog Grooming", grooming_info_path, class: "dog-care-info" %></li>
+              <li><%= link_to "Dog Care Videos", videos_path, class: "dog-care-info" %></li>
+            </ul>
+          </li>
+          <li>
+            <a class="page-scroll" href="#portfolio">Some of Our Pets</a>
+            <ul class="our-pets">
+              <li><%= link_to "See All Dogs", dogs_path, class: "all-our-pets" %></li>
+            </ul>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Helping Dogs</a>
+            <ul class="help-dogs">
+              <li><%= link_to "Get Involved", get_involved_path, class: "dog-involvement" %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
       <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
