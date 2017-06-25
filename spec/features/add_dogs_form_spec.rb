@@ -16,7 +16,7 @@ RSpec.feature "Adding Dogs" do
 
     fill_in "Name of Dog", with: "Allen"
     fill_in "Age", with: 2
-    fill_in "Breed", with: "Husky" 
+    find('.breed-color-group').fill_in "Breed", with: "Husky" 
     choose "dog_gender_male" 
     fill_in "Color", with: "black, white, gray"
     choose "dog_size_large"
@@ -41,7 +41,7 @@ RSpec.feature "Adding Dogs" do
 
     fill_in "Name of Dog", with: ""
     fill_in "Age", with: "" 
-    fill_in "Breed", with: "" 
+    find('.breed-color-group').fill_in "Breed", with: ""
     choose "dog_gender_male" 
     fill_in "Color", with: ""
     choose "dog_size_large"
