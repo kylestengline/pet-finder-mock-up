@@ -1,0 +1,91 @@
+#admin_email, #admin_password, #admin_password_confirmation {
+  margin-bottom: 40px;
+  padding-bottom: .4em;
+}
+
+#login-form, #signup-form {
+  background-color: #fff;
+  display: inline-block;
+  padding: 25px;
+  width: 650px;
+  height: 450px;
+  margin-left: 28%;
+  margin-top: 10%;
+  border: 5px solid #222;
+}
+
+#signup-form {
+  height: 550px;
+}
+
+.login-title, .sign-up-title {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-left: 40%;
+  color: black;
+  font-weight: 700;
+}
+
+form.new_admin {
+  font-size: 21px;
+}
+
+input.signup-email-field, input.signup-password-field, 
+input.signup-password-confirm-field {
+  width: 100%;
+  margin-bottom: 25px;
+  background-color: white;
+  text-align: left;
+  color: black;
+  border: 1px solid black;
+}
+
+input.email-field, input.password-field {
+  margin-bottom: 25px;
+  text-align: left;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.session-submit-button, .registration-submit-button, 
+.dog-search-submit-button {
+  background-color: #0b73ce;
+  color: white;
+}
+
+.signup-button > * {
+  margin-top: 30px;
+}
+
+.login-button > *,
+.signup-button > * {
+  width: 100%;
+  height: 40px;
+  font-size: 21px;
+}
+
+.sign-up-button-devise-links, .login-button-devise-links {
+  font-size: 21px;
+  color: black;
+  margin: 0%;
+}
+
+.links {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.alert {
+  color: red;
+  font-size: 18px;
+  margin-top: 70%;
+  background-color: white;
+  display: inline-block;
+}
+
+#error_explanation {
+  background-color: white;
+  padding: 10px;
+  padding-top: -70px;
+}
+

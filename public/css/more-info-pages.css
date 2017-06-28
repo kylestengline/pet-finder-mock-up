@@ -1,0 +1,52 @@
+.dog-adopt-info, .dog-care-info, 
+.all-our-pets, .dog-involvement {
+  margin-left: -20px;
+}
+
+#dog-adopt-info, #dog-breeds-info, 
+#bringing-dogs-home-info, #dog-training-info,
+#dog-problems-info, #dog-grooming-info, #dog-videos-info,
+#dog-helping-dogs-info {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  
+}
+
+.info-page-heading {
+  margin-top: 50px;
+  color: white;
+  position: relative;
+  margin-left: 20px;
+}
+
+th, td {
+  position: relative;
+  padding-bottom: 15px;
+  color: white;
+  font-weight: 100;
+  padding-right: 100px;
+  left: 100px;
+}
+
+th {
+  font-size: 25px;
+}
+
+td {
+  width: 50%;
+}
+
+iframe {
+  border: 5px solid white;
+  background-color: #222;
+}
+
+.first-row {
+  margin-top: 2%;
+}
+
+.second-row {
+  margin-top: 5%;
+}
+
