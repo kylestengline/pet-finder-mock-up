@@ -22,19 +22,14 @@
 
 th, td {
   position: relative;
-  padding-bottom: 15px;
   color: white;
   font-weight: 100;
-  padding-right: 100px;
-  left: 100px;
+  padding-right: 2%;
+  left: 20px;
 }
 
 th {
-  font-size: 25px;
-}
-
-td {
-  width: 50%;
+font-size: 25px;
 }
 
 iframe {

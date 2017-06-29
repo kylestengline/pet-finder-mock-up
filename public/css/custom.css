@@ -5,20 +5,19 @@ body {
 
 /* Dog Search Results  */
 .doge-info {
-  height: 450px;
-  width: 350px;
   margin-left: 50px;
   margin-right: 50px;
-  margin-top: 70px;
+  margin-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
   color: black;
-  background: rgba(236, 227, 227, 0.67);
+  /*background: rgba(0, 0, 0, 0.9);*/
   display: inline-block;
 }
 
 .dog-name {
   font-size: 35px;
+  margin-top: 25%;
 }
 
 .breed-name, .dog-age {

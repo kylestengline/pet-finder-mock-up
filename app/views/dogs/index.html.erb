@@ -1,23 +1,41 @@
 <h1 class="search-dogs-header">Search for that Perfect Pet</h1>
 <div class="doge-info">
   <table>
+    <thead>
     <% @dogs.each do |d| %>
       <tr>
+        <th><h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
         <td>
-          <h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2>
           <div class="dog-photo">
             <%= image_tag d.photo, size: "250" %>
           </div>
-          <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
-          <% if d.gender.titleize == "Female" %>
-            <h4 class="dog-age">She is <%= d.age %> years old.</h4>
-          <% else %>
-            <h4 class="dog-age">He is <%= d.age %> years old.</h4>
-          <% end %>
         </td>
+        <td>
+          <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
+        </td>
+        <% if d.gender.titleize == "Female" %>
+          <td>
+            <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+          </td>
+        <% else %>
+          <td>
+            <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+          </td>
+        <% end %>
       </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
 
-<h4><%= link_to "Home Page", root_path %></h4>
+<!-- <#% exclude_columns = ['id', 'adoptable', 'post_date', 'color', 'size', 'birth_date'] %>
+<#% for column in @dogs.column_names
+  next if exclude_columns.include?(column) %>
+  <#%= @dogs.send(column) %>
+<#% end %>-->
+  
+
