@@ -20,6 +20,10 @@ body {
   padding-left: 15px;
 }
 
+.dog-name a {
+  color: black;
+}
+
 .dog-link-name {
   color: black;
 }
@@ -27,6 +31,7 @@ body {
 .dog-link-name:hover {
   color: #444;  
 }
+
 #col-dog-photo {
   width: 35%;
 }
@@ -43,6 +48,13 @@ body {
   padding-left: 25px;
   border: 3px solid black;
   margin: 50px;
+}
+
+.admins-dog-index {
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-bottom: -1%;
+  color: #222;
 }
 
 /*Dropdowns*/
