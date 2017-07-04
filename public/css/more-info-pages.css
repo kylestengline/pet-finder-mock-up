@@ -15,33 +15,32 @@
 
 .info-page-heading {
   margin-top: 50px;
-  color: white;
+  color: #222;
   position: relative;
   margin-left: 20px;
 }
 
+td.dog-training, th.dog-training {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 th, td {
   position: relative;
-  color: white;
+  color: #222;
   font-weight: 100;
-  padding-right: 2%;
-  left: 20px;
+  padding-right: 5%;
+  padding-left: 5%;
+  text-align: justify;
 }
 
 th {
-font-size: 25px;
+  font-size: 25px;
+  padding-top: 2%;
 }
 
-iframe {
+iframe.dog-videos {
   border: 5px solid white;
   background-color: #222;
+  padding: 5px;
 }
-
-.first-row {
-  margin-top: 2%;
-}
-
-.second-row {
-  margin-top: 5%;
-}
-
