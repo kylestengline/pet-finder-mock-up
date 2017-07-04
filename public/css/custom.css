@@ -1,13 +1,13 @@
 body {
   background-size: cover;
-}
-
-img#dog-header {
-  width: 100%;
-  position: fixed;
-  opacity: .5;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, .5),
+    rgba(255, 255, 255, .5)),
+  url("../img/dogheader.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Dog Search Results  */
