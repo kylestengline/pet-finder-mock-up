@@ -24,7 +24,7 @@
                 <div id="form-searching-for-dogs">
                   <div class="location">
                     <% label_tag :location, class: "location-label" %>
-                    <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area" %>
+                    <%= number_field_tag :location, params[:location], max: 0..5, placeholder: "Zip Code", class: "zip-code-area", required: true %>
                   </div>
 
                   <div class="dog-breed">
