@@ -15,7 +15,6 @@
 
 .info-page-heading {
   margin-top: 50px;
-  color: #222;
   position: relative;
   margin-left: 20px;
 }
@@ -27,8 +26,6 @@ td.dog-training, th.dog-training {
 
 th, td {
   position: relative;
-  color: #222;
-  font-weight: 100;
   padding-right: 5%;
   padding-left: 5%;
   text-align: justify;
