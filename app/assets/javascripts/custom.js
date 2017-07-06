@@ -30,6 +30,11 @@ $(document).ready(function(){
       $(this).children('ul').hide();
     }
   );
+
+  // Remove Flash Messages after 2 seconds
+  setTimeout(function(){
+    $('.alert').remove();
+  }, 2000);
 });
     
 
