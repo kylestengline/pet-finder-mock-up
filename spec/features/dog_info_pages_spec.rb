@@ -37,7 +37,7 @@ RSpec.feature "Dog Info Pages" do
     click_link "Home Care"
 
     expect(page).to have_current_path dog_home_info_path
-    expect(page).to have_selector('h1', text: 'More Info about bringing a Dog Home')
+    expect(page).to have_selector('h1', text: 'Bringing a Dog Home')
     expect(page).to have_selector('th', text: 'How to Bring a dog home')
     expect(page).to have_selector('th', text: 'Application Info')
     expect(page).to have_selector('th', text: 'How To Prepare Your Dog for Home')
