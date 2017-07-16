@@ -1,16 +1,20 @@
 <div class="doge-info">
-  <% @dogs.each do |d| %>
-    <h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2>
-    <div class="dog-photo">
-      <%= image_tag d.photo, size: "250" %>
-    </div>
-    <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
-    <% if d.gender.titleize == "Female" %>
-      <h4 class="dog-age">She is <%= d.age %> years old.</h4>
-    <% else %>
-      <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+  <div class="list-inline">
+    <% @dogs.each do |d| %>
+      <li class="dog-col-info">
+        <h2 class="dog-name">Meet <%= link_to d.name, dog_path(d.id) %></h2>
+        <div class="dog-photo">
+          <%= image_tag d.photo, height: "300", width: "350" %>
+        </div>
+        <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
+        <% if d.gender.titleize == "Female" %>
+          <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+        <% else %>
+          <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+        <% end %>
+      </li>
     <% end %>
-  <% end %>
+  </div>
   <% unless @dogs.present? %>
     <div class="no-doges-match">
       <h3 class="search-returns-none">
@@ -20,4 +24,3 @@
     </div>
   <% end %>
 </div>
-<link rel="stylesheet" type="text/css" href="/css/custom.css">

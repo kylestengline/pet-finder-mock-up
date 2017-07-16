@@ -2,15 +2,13 @@
 <% if @admins_dogs.any? %>
   <div class="doge-info">
     <div class="container">
-      <% @admins_dogs.each do |d| %>
-        <div class="row" id="dog-page">
-          <h2 class="dog-name"><%= link_to d.name, admin_admin_path(d) %></h2>
-          <div class="col-md-3" id="col-dog-photo">
+      <div class="list-inline">
+        <% @admins_dogs.each do |d| %>
+          <li class="dog-col-info">
+            <h2 class="dog-name"><%= link_to d.name, admin_admin_path(d) %></h2>
             <div class="dog-photo">
               <%= image_tag d.photo, height: "300", width: "350" %>
             </div>
-          </div>
-          <div class="col-md-3">
             <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
             <% if d.gender.titleize == "Female" %>
               <h4 class="dog-age">She is <%= d.age %> years old.</h4>
@@ -19,9 +17,9 @@
               <h4 class="dog-age">He is <%= d.age %> years old.</h4>
               <%= d.title_age.titleize %>
             <% end %>
-          </div>
-        </div>
-      <% end %>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
 <% else %>

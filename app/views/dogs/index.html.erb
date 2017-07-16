@@ -1,25 +1,23 @@
 <h1 class="dogs-header">Looking for a New Best Friend?</h1>
 <div class="doge-info">
   <div class="container">
-    <% @dogs.each do |d| %>
-      <div class="row" id="dog-page">
-        <h2 class="dog-name">
-          Meet <%= link_to d.name, dog_path(d.id), class: "dog-link-name" %>
-        </h2>
-        <div class="col-md-3" id="col-dog-photo">
+    <div class="list-inline">
+      <% @dogs.each do |d| %>
+        <li class="dog-col-info">
+          <h2 class="dog-name">
+            Meet <%= link_to d.name, dog_path(d.id), class: "dog-link-name" %>
+          </h2>
           <div class="dog-photo">
             <%= image_tag d.photo, height: "300", width: "350" %>
           </div>
-        </div>
-        <div class="col-md-3">
           <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
           <% if d.gender.titleize == "Female" %>
             <h4 class="dog-age">She is <%= d.age %> years old.</h4>
           <% else %>
               <h4 class="dog-age">He is <%= d.age %> years old.</h4>
           <% end %>
-        </div>
-      </div>
-    <% end %>
+        </li>
+      <% end %>
+    </div>
   </div>
 </div>

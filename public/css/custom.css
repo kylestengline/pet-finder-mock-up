@@ -11,23 +11,35 @@ body {
 }
 
 /* Dog Search Results  */
-.doge-info {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  color: black;
+.list-inline>li {
   display: inline-block;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.dog-name, .dog-photo, 
+.breed-name, .dog-age {
+  text-align: center;  
+}
+
+.dog-col-info {
+  background-color: white;
+  border: 4px solid black;
+  width: 35%;
+}
+
+.doge-info {
+  margin-top: 10px;
+  color: black;
 }
 
 .dog-name {
   font-size: 35px;
-  padding-left: 15px;
 }
 
 .dog-name a {
   color: black;
+  cursor: pointer;
 }
 
 .dog-link-name {
