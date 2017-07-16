@@ -12,9 +12,13 @@
           </div>
           <h4 class="breed-name"><%= d.name %> is a <%= d.breed %></h4>
           <% if d.gender.titleize == "Female" %>
-            <h4 class="dog-age">She is <%= d.age %> years old.</h4>
+            <h4 class="dog-age">
+              She is <%= d.age %> years old and is a <%= d.size %> sized dog.
+            </h4>
           <% else %>
-              <h4 class="dog-age">He is <%= d.age %> years old.</h4>
+            <h4 class="dog-age">
+              He is <%= d.age %> years old and is a <%= d.size %> sized dog.
+            </h4>
           <% end %>
         </li>
       <% end %>
