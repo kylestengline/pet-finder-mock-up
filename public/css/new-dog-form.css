@@ -35,8 +35,7 @@ form.form-horizontal {
   border: 6px solid #305A72;
 }
 
-.form-horizontal input[type="text"],
-input[type="number"] {
+.form-horizontal input[type="text"] {
   -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
   -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
   box-shadow: inset 0px 1px 0px 0px #3985B1;
@@ -45,6 +44,13 @@ input[type="number"] {
   cursor: pointer;
   padding: 8px 18px;
   text-decoration: none;
+}
+
+.form-horizontal input[type="number"] {
+  -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  box-shadow: inset 0px 1px 0px 0px #3985B1;
+  border: 1px solid #17445E;
 }
 
 div.has-left-label label, 

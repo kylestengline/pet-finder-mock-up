@@ -122,8 +122,11 @@ div.panel-body {
 
 .panel-danger {
   margin-bottom: 15px;
-  width: 66%;
   margin: 0 auto;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
 }
 
 .panel-danger>.panel-heading {
