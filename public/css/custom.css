@@ -18,7 +18,11 @@ body {
 }
 
 .dog-name, .dog-photo, 
-.breed-name, .dog-age {
+.breed-name, .dog-age,
+.dog-size-color, .dog-birth,
+.dog-location, .dog-name-show, 
+.adoption-available, .adoption-unavailable,
+.edit-link, .back-link {
   text-align: center;  
 }
 
@@ -55,8 +59,23 @@ body {
 }
 
 .breed-name, .dog-age {
-  font-size: 24px;
+  font-size: 21px;
   padding-top: 30px;
+}
+
+.edit-link, .back-link {
+  display: inline;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+#dog-info-show-page {
+  display: inline-block;
+  margin-left: 500px;
+  background-color: white;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 50px;
 }
 
 #dog-page {
@@ -73,6 +92,17 @@ body {
   margin-left: 5%;
   margin-bottom: -1%;
   color: #222;
+}
+
+.show-admin-dogs {
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
+/* Edit Page*/
+.edit-dog-info {
+  text-align: center;
+  padding-top: 30px;
 }
 
 /*Dropdowns*/

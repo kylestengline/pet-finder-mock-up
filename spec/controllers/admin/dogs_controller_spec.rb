@@ -43,7 +43,7 @@ RSpec.describe Admin::DogsController, type: :controller do
         msg = "You can only edit the dog you posted"
         login_admin admin2
         get :edit, params: { id: dog }
-        expect(response).to redirect_to admin_dogs_path
+        expect(response).to redirect_to admin_admins_path
         expect(flash[:danger]).to eq msg 
       end
     end
@@ -55,7 +55,7 @@ RSpec.describe Admin::DogsController, type: :controller do
       it "updates a dog and redirects to the show page" do
         put :update, params: { id: dog, :dog => dog2  }
         dog.reload
-        expect(response).to redirect_to admin_dog_path(dog)
+        expect(response).to redirect_to admin_admin_path(dog)
         expect(dog.location).to eq dog2[:location]
         expect(dog.size).to eq dog2[:size]
       end

@@ -30,18 +30,18 @@ class Admin::DogsController < ApplicationController
   def edit
     if @dog.admin_id != current_admin.id
       flash[:danger] = "You can only edit the dog you posted"
-      redirect_to admin_dogs_path
+      redirect_to admin_admins_path
     end
   end
 
   def update
     if @dog.admin_id != current_admin.id
       flash[:danger] = "You can only edit the dog you posted"
-      redirect_to admin_dogs_path
+      redirect_to admin_admins_path
     else
       if @dog.update(dog_params)
         flash[:success] = "Dog successfully updated"
-        redirect_to admin_dog_path
+        redirect_to admin_admin_path(@dog)
       else
         flash.now[:danger] = "Dog unsuccessfully updated"
         render :edit
