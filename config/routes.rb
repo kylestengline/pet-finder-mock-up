@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "searchs/index"
 
   namespace :admin do
-    resources :dogs
+    resources :dogs, only: [:edit, :create, :update, :new]
   end
 
   namespace :admin do

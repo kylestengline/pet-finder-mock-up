@@ -1,15 +1,5 @@
 class Admin::DogsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
-
-  before_action :set_dog, only: [:show, :edit, :update]
-
-  def index
-    @dogs = Dog.all
-  end
-
-  def show
-    @admin_dogs = Dog.where(admin_id: params[:id])
-  end
+  before_action :set_dog, only: [:edit, :update]
 
   def new
     @dog = Dog.new
@@ -20,7 +10,7 @@ class Admin::DogsController < ApplicationController
     @dog.admin_id = current_admin.id
     if @dog.save
       flash[:success] = "Dog added successfully."
-      redirect_to admin_dogs_path
+      redirect_to admin_admins_path
     else
       flash.now[:danger] = "Dog not added."
       render :new

@@ -17,19 +17,12 @@ RSpec.describe Admin::DogsController, type: :controller do
 
   describe "Actions for admins to create dogs" do
 
-    context "Sign In" do
-      it "allows admins to sign in" do
-        get :index
-        expect(response).to have_http_status(:success)
-      end
-    end
-
     context "#create" do
       #Must use params and not dog, b/c we're passing in params of dog
       #At least that's why I think I couldn't use dog in place of params
       it "allows admins to create new dogs" do
         post :create, params: { dog: @dog_params }
-        expect(response).to redirect_to admin_dogs_path
+        expect(response).to redirect_to admin_admins_path
       end
     end
 

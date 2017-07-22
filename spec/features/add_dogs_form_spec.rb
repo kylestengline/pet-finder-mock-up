@@ -29,7 +29,7 @@ RSpec.feature "Adding Dogs" do
     click_on "Create Dog"
     
     expect(page).to have_content "Dog added successfully."
-    expect(page).to have_current_path admin_dogs_path
+    expect(page).to have_current_path admin_admins_path
 
   end
 
