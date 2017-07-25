@@ -27,7 +27,9 @@
 <% else %>
   <div id="no-dogs-yet">
     <h2 class="no-dogs">
-      <%= current_admin.email %> hasn't posted any dogs yet. Follow this <%= link_to "link", new_admin_dog_path %> to post a dog for adoption.
+      <%= current_admin.email %> hasn't posted any dogs yet. 
+      <br/>
+      Follow this <%= link_to "link", new_admin_dog_path %> to post a dog for adoption.
     </h2>
   </div>
 <% end %>
