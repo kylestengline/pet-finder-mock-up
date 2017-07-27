@@ -17,6 +17,7 @@ RSpec.describe Admin::AdminsController, type: :controller do
 
   before(:each) do
     login_admin admin
+    expect(response).to have_http_status(:success)
   end
 
   describe "Admins see their own dogs" do
@@ -26,29 +27,27 @@ RSpec.describe Admin::AdminsController, type: :controller do
 
       it "allows admins to sign in" do
         get :index
-        #possible false positive with Dog.all.count
-        dogs = Dog.all.count
         expect(response).to render_template :index
-        expect(response.body).to match dogs.to_s
+        expect(response.body).to have_css "a[href='/admin/admins/#{dog.id}']"
       end
     end
 
     context "admins view a specific dog" do
-      it "allows admins to view specific dog" do
+      it "shows one dog" do
         get :show, params: { id: dog.id }
-        dogs = Dog.all.count
         expect(response).to render_template :show
-        expect(response.body).to match dogs.to_s
+        within "h1.show-admin-dogs" do
+          expect(response).to have_css admin.email
+        end
       end
     end
 
-    context "different admin signs in" do
+    context "when different admin signs in" do
       it "shows no dogs" do
         login_admin admin2
         get :index
-        dogs = Dog.all.count
         expect(response).to render_template :index
-        expect(response.body).to match dogs.to_s
+        expect(response.body).to have_css "a[href='/admin/admins/#{dog2.id}']"
       end
     end
   end
