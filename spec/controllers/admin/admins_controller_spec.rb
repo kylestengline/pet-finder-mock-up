@@ -23,9 +23,8 @@ RSpec.describe Admin::AdminsController, type: :controller do
   describe "Admins see their own dogs" do
     render_views
 
-    context "Admins can view their index page" do
-
-      it "allows admins to sign in" do
+    context "Admins index page" do
+      it "allows admins to veiw their own dogs" do
         get :index
         expect(response).to render_template :index
         expect(response.body).to have_css "a[href='/admin/admins/#{dog.id}']"
@@ -43,7 +42,7 @@ RSpec.describe Admin::AdminsController, type: :controller do
     end
 
     context "when different admin signs in" do
-      it "shows no dogs" do
+      it "shows their dogs" do
         login_admin admin2
         get :index
         expect(response).to render_template :index
