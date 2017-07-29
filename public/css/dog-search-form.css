@@ -19,7 +19,7 @@ ul.dog-search {
 
 .search-for-dogs-form {
   background-color: rgb(255, 255, 255);
-  padding: 10px;
+  padding: 12px;
   display: inline-block;
   border-radius: 2px;
   border: 3px solid;
@@ -38,7 +38,12 @@ ul.dog-search {
 
 .age-baby, .age-young, .age-adult {
   padding: 5px;
-  font-size: 20px;
+  font-style: normal;
+  font-size: 18px;
+}
+
+p.age-name {
+  margin-bottom: 12px; 
 }
 
 .dog-search-submit-button {
