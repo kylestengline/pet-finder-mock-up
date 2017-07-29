@@ -1,0 +1,14 @@
+<div id="breeds-index">
+  <h1 class="info-page-heading">Dog Breeds</h1>
+  <% @breeds.each do |b| %>
+    <div class="breed-name">
+      <%= link_to b.name, breed_path(b.id) %> 
+    </div>
+    <div class="breed-photo">
+      <%= image_tag b.photo, height: "100", width: "150" %> 
+    </div>
+    <div class="breed-description">
+      <%= truncate(b.description, length: 200, separator: "...") %> 
+    </div>
+  <% end %>
+</div>

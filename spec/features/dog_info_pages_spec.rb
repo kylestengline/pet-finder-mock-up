@@ -2,6 +2,11 @@ require "rails_helper"
 
 RSpec.feature "Dog Info Pages" do
 
+  let!(:breed) {
+    Breed.create(name: "Beagle", photo: "http://cdn3-www.dogtime.com/assets/uploads/2011/01/file_23012_beagle.jpg",
+                           description: "Small, compact, and hardy, Beagles are active companions for kids and adults alike. Canines in this dog breed are merry and fun loving, but being hounds, they can also be stubborn and require patient, creative training techniques. Their noses guide them through life, and they’re never happier than when following an interesting scent. The Beagle originally was bred as a scenthound to track small game, mostly rabbits and hare. He is still used for this purpose in many countries, including the United States."
+              )}
+
   before(:each) do
     visit root_path
   end
@@ -23,12 +28,11 @@ RSpec.feature "Dog Info Pages" do
 
     click_link "Dog Breeds"
 
-    expect(page).to have_current_path breeds_info_path
+    expect(page).to have_current_path breeds_path
     expect(page).to have_selector('h1', text: 'Dog Breeds')
-    expect(page).to have_selector('th', text: 'Various Breeds')
-    expect(page).to have_selector('th', text: 'Where to find Different Breeds')
-    expect(page).to have_selector('th', text: 'Breeders')
-    expect(page).to have_selector('th', text: 'Breed Personalities')
+    expect(page).to have_link breed.name
+    expect(page).to have_xpath "//img[contains(@src,'#{File.basename(breed.photo)}')]"
+    expect(page).to have_content breed.description.truncate(200)
     
   end
   

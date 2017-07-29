@@ -11,9 +11,6 @@ class DogsController < ApplicationController
   def adoption
   end
 
-  def breeds
-  end
-
   def home
   end
 

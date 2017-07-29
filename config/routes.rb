@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
 
   get "dogs/adoption", as: "adoption_info"
-  get "dogs/breeds", as: "breeds_info"
   get "dogs/home", as: "dog_home_info"
   get "dogs/training", as: "training_info"
   get "dogs/problems", as: "problems_info"
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :admins, only: [:index, :show]
   end
+
+  resources :breeds, only: [:index, :show]
 
   devise_scope :admin do
     get "admins/sign_out" => "devise/sessions#destroy"
