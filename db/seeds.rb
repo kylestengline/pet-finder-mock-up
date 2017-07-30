@@ -7,6 +7,7 @@
 
 Dog.destroy_all
 Admin.destroy_all
+Breed.destroy_all
 
 unless Admin.find_by( email: "stuff@things.com" )
   Admin.create(

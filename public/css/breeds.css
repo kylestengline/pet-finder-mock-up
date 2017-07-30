@@ -1,8 +1,13 @@
 .breeds-name {
   font-size: 21px;
-  padding-top: 25px;
   text-align: left;
   padding-left: 5px;
+}
+
+.breeds-info {
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px 0px 10px 10px;
 }
 
 div#breeds-index {
@@ -11,7 +16,12 @@ div#breeds-index {
 
 div.breed-description {
   position: absolute;
-  margin-left: 10%;
+  margin-left: 12%;
   margin-top: 2%;
-  padding-left: 25px;
+  padding-right: 50px;
+}
+
+.breeds-heading {
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
