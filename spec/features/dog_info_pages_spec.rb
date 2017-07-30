@@ -33,6 +33,10 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_link breed.name
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(breed.photo)}')]"
     expect(page).to have_content breed.description.truncate(200)
+    expect(page).to have_content breed.life_span
+    expect(page).to have_content breed.temperament
+    expect(page).to have_content breed.height
+    expect(page).to have_content breed.weight
     
   end
   
