@@ -26,7 +26,8 @@ a {
 .dog-size-color, .dog-birth,
 .dog-location, .dog-name-show, 
 .adoption-available, .adoption-unavailable,
-.edit-link, .back-link {
+.edit-link, .back-link, 
+.adoptable, .dog-name-show-dogs {
   text-align: center;  
 }
 
@@ -98,9 +99,29 @@ a {
   color: #222;
 }
 
+.doge-info-show-doge {
+  height: 675px;
+  width: 600px;
+  display: inline-block;
+  background-color: #F05F40;
+  margin-top: 5%;
+  margin-left: 28%;
+  text-align: center;
+}
+
 .show-admin-dogs {
   margin-top: 40px;
   margin-left: 25px;
+}
+
+.dog-name-show-dogs {
+  padding-top: 3%;
+  padding-bottom: 1%;
+  font-size: 35px;
+}
+
+.break-at-bottom-of-dogs {
+  padding-top: 30px;
 }
 
 /* Edit Page*/

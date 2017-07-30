@@ -1,10 +1,9 @@
-<h1>Hi! I'm <%= @dog.name %>!</h1>
-
-<div class="doge-info">
+<div class="doge-info-show-doge">
+  <h1 class="dog-name-show-dogs">Hi! I'm <%= @dog.name %>!</h1>
   <div class="dog-photo">
-    <%= image_tag @dog.photo, size: 250 %>
+    <%= image_tag @dog.photo, height: 350, width: 450 %>
   </div>
-  <h4 class="breed-name"><%= @dog.name %> is a <%= @dog.breed %></h4>
+  <h4 class="breed-name"><%= @dog.name %> is a <%= @dog.breed %>.</h4>
   <div class="dog-info-with-gender">
     <% if @dog.gender.titleize == "Female" %>
       <h4 class="dog-age">She is a <%= @dog.title_age %> that is <%= @dog.age %> years old.</h4>
@@ -18,9 +17,11 @@
       <h4 class="dog-location">He is located at <%= @dog.location %>.</h4>
     <% end %>
   </div>
-  <% if @dog.adoptable == true %>
-    <h4>This Dog is available for adoption<h4>
-  <% else %>
-    <h4>This Dog is not available for adoption<h4>
-  <% end %>
+  <div class="adoptable">
+    <% if @dog.adoptable == true %>
+      <h4>This Dog is available for adoption.<h4>
+    <% else %>
+      <h4>This Dog is not available for adoption.<h4>
+    <% end %>
+  </div>
 </div>

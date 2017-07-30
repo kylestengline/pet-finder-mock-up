@@ -59,6 +59,20 @@ Dog.create!([
     color: "black",
     birth_date: Faker::Date.birthday(1, 9),
     admin_id: 1
+  },
+  { 
+    location: "92117",
+    name: Faker::Name.first_name,
+    age: 8,
+    title_age: "adult",
+    breed: "Labrador",
+    gender: "male",
+    adoptable: true,
+    size: "medium",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg",
+    color: "beige",
+    birth_date: Faker::Date.birthday(1, 9),
+    admin_id: 1
   }
 ])
 
