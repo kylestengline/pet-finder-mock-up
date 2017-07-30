@@ -37,12 +37,14 @@ div.breed-description {
 
 /* Show */
 div#breeds-show {
-  height: 650px;
-  width: 600px;
+  position: relative;
+  height: 875px;
+  width: 700px;
   display: inline-block;
   background-color: #F05F40;
   margin-top: 5%;
-  margin-left: 28%;
+  margin-bottom: 5%;
+  margin-left: 25%;
   text-align: center;
 }
 
@@ -53,4 +55,10 @@ div#breeds-show {
 
 .breed-description-show {
   padding: 25px 100px 0px 100px;
+}
+
+.breed-life-span, .breed-temperament,
+.breed-height, .breed-weight {
+  display: block;
+  padding-top: 10px;
 }

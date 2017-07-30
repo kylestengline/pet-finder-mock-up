@@ -8,6 +8,28 @@
     <%= image_tag @breed.photo, height: "300", width: "450" %> 
   </div>
   <div class="breed-description-show">
-    <%= @breed.description %> 
+    <p class="breed-description">
+      <%= @breed.description %> 
+    </p>
+  </div>
+  <div class="breed-life-span">
+    <p class="attributes">
+      Life Span: <%= @breed.life_span %>
+    </p>
+  </div>
+  <div class="breed-temperament">
+    <p class="attributes">
+      Temperament: <%= @breed.temperament %>
+    </p>
+  </div>
+  <div class="breed-height">
+    <p class="attributes">
+      Height: <%= @breed.height %>
+    </p>
+  </div>
+  <div class="breed-weight">
+    <p class="attributes">
+      Weight: <%= @breed.weight %>
+    </p>
   </div>
 </div>
