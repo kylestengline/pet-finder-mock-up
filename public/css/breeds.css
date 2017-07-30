@@ -31,6 +31,10 @@ div.breed-description {
   margin-left: 5%;
 }
 
+.break-between-breeds {
+  padding-top: 30px;
+}
+
 /* Show */
 div#breeds-show {
   height: 650px;

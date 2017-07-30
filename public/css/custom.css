@@ -10,6 +10,10 @@ body {
   background-attachment: fixed;
 }
 
+a {
+  cursor: pointer;
+}
+
 /* Dog Search Results  */
 .list-inline>li {
   display: inline-block;
