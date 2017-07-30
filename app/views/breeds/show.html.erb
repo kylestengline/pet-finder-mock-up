@@ -1,0 +1,13 @@
+<div id="breeds-show">
+  <div class="breed-name">
+    <h2 class="dog-breed-name">
+      <%= @breed.name %> 
+    </h2>
+  </div>
+  <div class="breed-photo">
+    <%= image_tag @breed.photo, height: "300", width: "400" %> 
+  </div>
+  <div class="breed-description">
+    <%= @breed.description %> 
+  </div>
+</div>
