@@ -74,7 +74,7 @@ Breed.create([
   },
   {
     name: "Schnauzer",
-    photo: "https://s-media-cache-ak0.pinimg.com/736x/f9/8b/39/f98b39b04001f8fd26f4b352740c7125--schnauzer-haircuts-miniature-snauzer.jpg",
+    photo: "http://static.ddmcdn.com/en-us/apl/breedselector/images/breed-selector/dogs/breeds/miniature-schnauzer_03_lg.jpg",
     description: "A dog breed who’s got it all in one small package: intelligence, affection, an extroverted temperament, humor, and a personality that’s twice as big as he is. Throw in that walrus moustache and quivering enthusiasm, and he’ll make you laugh every day. With a Miniature Schnauzer in the house, you’ll never be alone, not even when you go to the bathroom. He’s got personality-plus, and whether he’s bounding around ahead of you or curled up snoozing on your lap, you’ll never be bored with him around."
   },
   {
