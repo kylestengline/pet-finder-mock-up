@@ -64,7 +64,6 @@ RSpec.feature "Users can search for dogs" do
     fill_in "Dog Gender", with: dog2.gender
     click_button "Search for Dogs"
 
-    expect(page).to have_content "No Dogs match your search criteria. Please try your search again"
-    expect(page).to have_link "Search Again"
+    expect(page).to have_content "No Dogs match your search criteria. Please try your search again."
   end
 end

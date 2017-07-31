@@ -12,12 +12,12 @@
       <% if @admin_dog.gender.titleize == "Female" %>
         <h4 class="dog-age">Title Age: <%= @admin_dog.title_age.titleize %><br><br> Age: <%= @admin_dog.age %></h4>
         <h4 class="dog-size-color">Dog Size: <%= @admin_dog.size.titleize %><br><br> Color: <%= @admin_dog.color.titleize %></h4>
-        <h4 class="dog-birth">Birth Date <%= @admin_dog.birth_date %></h4>
+        <h4 class="dog-birth">Birth Date: <%= @admin_dog.birth_date %></h4>
         <h4 class="dog-location">Location: <%= @admin_dog.location %></h4>
       <% else %>
         <h4 class="dog-age">Title Age: <%= @admin_dog.title_age.titleize %><br><br> Age: <%= @admin_dog.age %></h4>
         <h4 class="dog-size-color">Size: <%= @admin_dog.size.titleize %><br><br> Color: <%= @admin_dog.color.titleize %></h4>
-        <h4 class="dog-birth">Birth Date <%= @admin_dog.birth_date %></h4>
+        <h4 class="dog-birth">Birth Date: <%= @admin_dog.birth_date %></h4>
         <h4 class="dog-location">Location: <%= @admin_dog.location %></h4>
       <% end %>
     </div>
@@ -27,8 +27,8 @@
       <h4 class="adoption-unavailable">Not available for adoption<h4>
     <% end %>
     <center>
-      <h5 class="edit-link"><%= link_to "Edit", [:edit, :admin, @admin_dog]  %> | </h5>
-      <h5 class="back-link"><%= link_to "Back", admin_admins_path %></h5>
+      <h5 class="edit-link"><%= link_to "Edit", [:edit, :admin, @admin_dog], class: "edit-dog-link"  %> | </h5>
+      <h5 class="back-link"><%= link_to "Back", admin_admins_path, class: "back-to-dogs-link" %></h5>
     </center>
   </div>
 </div>
