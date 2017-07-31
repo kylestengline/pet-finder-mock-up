@@ -9,13 +9,11 @@ Dog.destroy_all
 Admin.destroy_all
 Breed.destroy_all
 
-unless Admin.find_by( email: "stuff@things.com" )
-  Admin.create(
-    email: "stuff@things.com",
-    password: "password",
-    id: 1
-  )
-end
+Admin.create(
+  email: ENV["ADMIN_EMAIL"],
+  password: ENV["ADMIN_PASSWORD"],
+  id: 1
+)
 
 Dog.create!([
   { 
