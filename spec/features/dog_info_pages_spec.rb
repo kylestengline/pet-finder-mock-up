@@ -3,9 +3,13 @@ require "rails_helper"
 RSpec.feature "Dog Info Pages" do
 
   let!(:breed) {
-    Breed.create(name: "Beagle", photo: "http://cdn3-www.dogtime.com/assets/uploads/2011/01/file_23012_beagle.jpg",
-                           description: "Small, compact, and hardy, Beagles are active companions for kids and adults alike. Canines in this dog breed are merry and fun loving, but being hounds, they can also be stubborn and require patient, creative training techniques. Their noses guide them through life, and they’re never happier than when following an interesting scent. The Beagle originally was bred as a scenthound to track small game, mostly rabbits and hare. He is still used for this purpose in many countries, including the United States."
-              )}
+    Breed.create( name: "Beagle", photo: "http://cdn3-www.dogtime.com/assets/uploads/2011/01/file_23012_beagle.jpg",
+                           description: "Small, compact, and hardy, Beagles are active companions for kids and adults alike. Canines in this dog breed are merry and fun loving, but being hounds, they can also be stubborn and require patient, creative training techniques. Their noses guide them through life, and they’re never happier than when following an interesting scent. The Beagle originally was bred as a scenthound to track small game, mostly rabbits and hare. He is still used for this purpose in many countries, including the United States.",
+                  temperament: "even tempered, intelligent, determined, amiable, gentle, excitable",
+                  life_span: "12 – 15 years",
+                  height: "male: 14–16 inches (36–41 cm), female: 13–15 inches (33–38 cm)",
+                  weight: "male: 22–24 lbs (10–11 kg), female: 20–22 lbs (9–10 kg)"
+                )}
 
   before(:each) do
     visit root_path
@@ -33,13 +37,24 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_link breed.name
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(breed.photo)}')]"
     expect(page).to have_content breed.description.truncate(200)
+
+  end
+  
+  scenario "renders the dog breeds show page" do
+
+    click_link "Dog Breeds"
+    click_link breed.name
+
+    expect(page).to have_current_path breed_path(breed.id)
+    expect(page).to have_selector('h2', text: "#{breed.name}")
+    expect(page).to have_content breed.description
     expect(page).to have_content breed.life_span
     expect(page).to have_content breed.temperament
     expect(page).to have_content breed.height
     expect(page).to have_content breed.weight
-    
+
   end
-  
+    
   scenario "renders the bring a dog home page" do
 
     click_link "Home Care"
