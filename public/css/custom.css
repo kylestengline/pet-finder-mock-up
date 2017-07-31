@@ -109,6 +109,11 @@ h4.adoption-available {
   color: #222;
 }
 
+#no-dogs-yet {
+  margin-left: 28%;
+  margin-top: 7%;
+}
+
 .doge-info-show-doge {
   height: 675px;
   width: 600px;
