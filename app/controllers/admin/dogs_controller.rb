@@ -1,5 +1,6 @@
 class Admin::DogsController < ApplicationController
   before_action :set_dog, only: [:edit, :update]
+  before_action :authenticate_admin!
 
   def new
     @dog = Dog.new
