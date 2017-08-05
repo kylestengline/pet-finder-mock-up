@@ -16,9 +16,11 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 #found here https://stackoverflow.com/questions/5267998/rails-3-field-with-errors-wrapper-changes-the-page-appearance-how-to-avoid-t
 module PetFinderMockUp
   class Application < Rails::Application
+    config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
       html_tag
     }
