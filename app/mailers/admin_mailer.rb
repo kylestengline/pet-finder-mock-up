@@ -24,14 +24,14 @@ class AdminMailer < Devise::Mailer
     mail(to: @admin.email, subject: "Welcome to Dog Seeker!")
   end
 
-  def create_dog(create_dog)
-    @create_dog = create_dog
+  def create_dog_email(dog)
+    @dog = dog
     @admin_dogs_url = "https://dogseeker.herokuapp.com/admin/admins"
     mail(to: @dog.email, subject: "You just added a new dog for adoption")
   end
   
-  def update_dog(update_dog)
-    @update_dog = update_dog
+  def update_dog_email(dog)
+    @dog = dog
     @admin_dogs_url = "https://dogseeker.herokuapp.com/admin/admins"
     mail(to: @dog.email, subject: "You just updated one of your dogs")
   end

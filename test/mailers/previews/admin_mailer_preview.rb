@@ -8,4 +8,8 @@ class AdminMailerPreview < ActionMailer::Preview
     AdminMailer.welcome_email(Admin.first)
   end
 
+  def create_dog_email
+    AdminMailer.create_dog_email(Admin.first)
+  end
+  
 end
