@@ -20,7 +20,9 @@ class AdminMailer < Devise::Mailer
 
   def welcome_email(admin)
     @admin = admin
-    @login_url = "https://dogseeker.herokuapp.com/admins/sign_in"
+    #For PROD
+    #@login_url = "https://dogseeker.herokuapp.com/sign_in" 
+    @login_url = "http://localhost:3000/admins/sign_in" 
     mail(to: @admin.email, subject: "Welcome to Dog Seeker!")
   end
 
