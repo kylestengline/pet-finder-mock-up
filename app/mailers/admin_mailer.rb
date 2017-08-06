@@ -28,7 +28,9 @@ class AdminMailer < Devise::Mailer
 
   def create_dog_email(dog)
     @dog = dog
-    @admin_dogs_url = "https://dogseeker.herokuapp.com/admin/admins"
+    #Production
+    #@admin_dogs_url = "https://dogseeker.herokuapp.com/admin/admins"
+    @admin_dogs_url = "http://localhost:3000/admin/admins" 
     mail(to: @dog.email, subject: "You just added a new dog for adoption")
   end
   
@@ -37,4 +39,5 @@ class AdminMailer < Devise::Mailer
     @admin_dogs_url = "https://dogseeker.herokuapp.com/admin/admins"
     mail(to: @dog.email, subject: "You just updated one of your dogs")
   end
+
 end

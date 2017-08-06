@@ -10,6 +10,8 @@ class Admin::DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.admin_id = current_admin.id
     if @dog.save
+      @admin = current_admin
+      AdminMailer.create_dog_email(@admin).deliver_now
       flash[:success] = "Dog added successfully."
       redirect_to admin_admins_path
     else
