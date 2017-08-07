@@ -33,6 +33,8 @@ class Admin::DogsController < ApplicationController
       redirect_to admin_admins_path
     else
       if @dog.update(dog_params)
+        @admin = current_admin
+        AdminMailer.update_dog_email(@admin).deliver_now
         flash[:success] = "Dog successfully updated"
         redirect_to admin_admin_path(@dog)
       else

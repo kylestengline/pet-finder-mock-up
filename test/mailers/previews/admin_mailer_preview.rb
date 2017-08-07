@@ -12,4 +12,8 @@ class AdminMailerPreview < ActionMailer::Preview
     AdminMailer.create_dog_email(Admin.first)
   end
   
+  def update_dog_email
+    AdminMailer.update_dog_email(Admin.first)
+  end
+
 end
