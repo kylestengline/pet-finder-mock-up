@@ -18,20 +18,20 @@ done.
 Normally, for apps I build from scratch, there would be at least a 1 to 2 day 
 period of gathering thoughts, writing everything down and making sure to place 
 these ideas into organized, structured notes and when to implement what. My 
-first thoughts when doing this mockup, was to simply copy the layouts from 
-Petfinder.com, but I learned very early on that one does not simply do that 
-with a larger scale web app. I learned that when building a larger scale applications, 
+first thoughts when doing this mockup was to simply copy the layouts from 
+Petfinder.com. I learned very early on that one does not simply do that 
+with a large scale web app. I learned that when building a large scale application, 
 whether your mocking another web app or not, requires a lot of organization.
-You have to be able to use some sort of project management template to organize 
-your ideas, pages, test specs, controllers, etc. 
+You have to use some sort of project management tool to organize 
+your ideas, views, test specs, controllers, etc. 
 
 ### Hurdle 2 - Advanced Search Form
 
 For the search form, I didn't use any gems. I built the search form from hours of
 googling, thinking I had a solution (but really didn't), and finally arriving at
-a tutorial about advanced searchs that greatly helped me understand how they
+a tutorial about advanced search forms. The tutorial greatly helped me understand how search forms
 actually work. After arriving at the tutorial, I learned a great deal more about
-modules, rails, scopes, and so, so much more.
+modules, models, scope, and so, so much more.
 
 ## Technologies
  
