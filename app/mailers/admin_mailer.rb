@@ -2,19 +2,19 @@ class AdminMailer < Devise::Mailer
   helper :application # gives access to all helpers defined within `application_helper`.
   include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
 
-  default from: "dogseeker7@gmail.com"
+  default from: ENV["ADMIN_EMAIL"]
 
   def confirmation_instructions(record, token, opts={})
     header["Custom-header"] = "Welcome to Dog Seeker"
-    opts[:from] = "dogseeker7@gmail.com"
-    opts[:reply_to] = "dogseeker7@gmail.com"
+    opts[:from] = ENV["ADMIN_EMAIL"]
+    opts[:reply_to] = ENV["ADMIN_EMAIL"]
     super
   end
 
   def password_change(record, token, opts={})
     header["Custom-header"] = "Confirmation of password change"
-    opts[:from] = "dogseeker7@gmail.com"
-    opts[:reply_to] = "dogseeker7@gmail.com"
+    opts[:from] = ENV["ADMIN_EMAIL"]
+    opts[:reply_to] = ENV["ADMIN_EMAIL"]
     super
   end
 
