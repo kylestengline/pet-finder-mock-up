@@ -1,9 +1,15 @@
+def last_email
+  ActionMailer::Base.deliveries.last
+end
+
 def login(admin)
   admin = Admin.create(email: "admin@example.com", password: "password")
 
-  visit root_path
+  #confirmation email sent
+  #grabbing confirm token in order to sign in
+  confirm = last_email.body.match(/confirmation_token=\w*/)
+  visit "/admins/confirmation?#{confirm}"
 
-  click_link "Sign In"
   fill_in "Email", with: admin.email
   fill_in "Password", with: admin.password
   click_button "Login"

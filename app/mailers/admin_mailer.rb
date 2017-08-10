@@ -5,14 +5,14 @@ class AdminMailer < Devise::Mailer
   default from: ENV["ADMIN_EMAIL"]
 
   def confirmation_instructions(record, token, opts={})
-    header["Custom-header"] = "Welcome to Dog Seeker"
+    headers["Custom-header"] = "Welcome to Dog Seeker"
     opts[:from] = ENV["ADMIN_EMAIL"]
     opts[:reply_to] = ENV["ADMIN_EMAIL"]
     super
   end
 
   def password_change(record, token, opts={})
-    header["Custom-header"] = "Confirmation of password change"
+    headers["Custom-header"] = "Confirmation of password change"
     opts[:from] = ENV["ADMIN_EMAIL"]
     opts[:reply_to] = ENV["ADMIN_EMAIL"]
     super

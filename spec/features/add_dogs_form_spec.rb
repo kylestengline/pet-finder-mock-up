@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Adding Dogs" do
   
-  let!(:admin) {Admin.create(email: "admin@example.com", password: "password")}
+  let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
 
   before(:each) do
     login admin
