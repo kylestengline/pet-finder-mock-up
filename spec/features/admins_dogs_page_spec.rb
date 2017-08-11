@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.feature "Admins Dog Page" do
 
-  let(:admin) {Admin.create(email: "admin@example.com", password: "password")}
-  let(:admin2) {Admin.create(email: "admin2@example.com", password: "password2")}
-  let(:admin3) {Admin.create(email: "admin3@example.com", password: "password3")}
+  let!(:admin) {Admin.create(email: "admin@example.com", password: "password")}
+  let!(:admin2) {Admin.create(email: "admin2@example.com", password: "password2")}
+  let!(:admin3) {Admin.create(email: "admin3@example.com", password: "password3")}
 
   let!(:dog) {Dog.create(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", birth_date: "11/12/2015",
                        gender: "female", location: "92603", adoptable: true, size: "small", color: "white, orange",
@@ -17,9 +17,11 @@ RSpec.feature "Admins Dog Page" do
                    )}
 
   scenario "personalized admin page for showing all dogs" do
-    login admin
+    visit root_path
+    signin admin
 
     click_link "All Dogs"
+    #puts page.body
     expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin.email }")
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
