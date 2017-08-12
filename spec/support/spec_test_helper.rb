@@ -11,12 +11,11 @@ def login(admin)
   visit "/admins/confirmation?#{confirm}"
 
   fill_in "Email", with: admin.email
-  fill_in "admin_password", with: admin.password
+  fill_in "Password", with: admin.password
   click_button "Login"
 end
 
 def sign_in(admin)
-  visit root_path
   click_link "Sign In"
   fill_in "Email", with: admin.email
   fill_in "Password", with: admin.password
