@@ -3,6 +3,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+include Warden::Test::Helpers
+Warden.test_mode!
 require 'spec_helper'
 require 'rspec/rails'
 require 'support/spec_test_helper'
@@ -11,8 +13,6 @@ require 'support/factory_girl'
 require 'rails-controller-testing'
 require 'support/controller_macros'
 require "database_cleaner"
-include Warden::Test::Helpers
-Warden.test_mode!
 # Add additional requires below this line. Rails is not loaded until this point!
 
 RSpec.configure do |config|

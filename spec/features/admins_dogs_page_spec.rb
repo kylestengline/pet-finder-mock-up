@@ -17,11 +17,11 @@ RSpec.feature "Admins Dog Page" do
                    )}
 
   scenario "personalized admin page for showing all dogs" do
+    login_as(admin)
     visit root_path
-    signin admin
+    puts page.body
 
     click_link "All Dogs"
-    #puts page.body
     expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin.email }")
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
