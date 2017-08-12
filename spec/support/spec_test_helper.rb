@@ -3,21 +3,21 @@ def last_email
 end
 
 def login(admin)
-  admin = Admin.create(email: "admin@example.com", password: "password")
-
+  #admin = Admin.create!(email: "admin@test.com", password: "password")
   #confirmation email sent
   #grabbing confirm token in order to sign in
-  confirm = last_email.body.match(/confirmation_token=\w*/)
+  #confirm = last_email.body.match(/confirmation_token=\w*/)
+  confirm = last_email.body.match(/confirmation_token=[^"]+/)
   visit "/admins/confirmation?#{confirm}"
 
   fill_in "Email", with: admin.email
-  fill_in "Password", with: admin.password
+  fill_in "admin_password", with: admin.password
   click_button "Login"
 end
 
-def signin(admin)
+def sign_in(admin)
+  visit root_path
   click_link "Sign In"
-
   fill_in "Email", with: admin.email
   fill_in "Password", with: admin.password
   click_button "Login"

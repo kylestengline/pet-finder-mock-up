@@ -10,13 +10,11 @@ RSpec.feature "Signing Admins In" do
 
   scenario "Admins can Sign in" do
 
-    click_link "Sign In"
-
-    expect(page).to have_selector('h2', text: 'Login' )
-
-    fill_in "Email", with: admin.email
-    fill_in "Password", with: admin.password
-    click_button "Login"
+    #click_link "Sign In"
+    login admin
+    #fill_in "Email", with: admin.email
+    #fill_in "Password", with: admin.password
+    #click_button "Login"
 
     expect(page).to have_content "Signed in successfully."
     expect(page).to have_current_path root_path
