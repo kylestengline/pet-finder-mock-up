@@ -21,6 +21,7 @@ RSpec.feature "Showing Individual Dogs" do
     expect(page).to have_content dog.title_age
     expect(page).to have_content dog.location
     expect(page).to have_content dog.size
+    expect(page).to have_content admin.email
     expect(page).to have_xpath "//img[contains(@src,'#{File.basename(dog.photo)}')]"
     expect(page).to have_current_path dog_path(Dog.first)
 
