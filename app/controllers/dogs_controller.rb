@@ -6,6 +6,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @posted_by = Admin.find_by(id: @dog.admin_id)
   end
 
   def adoption
