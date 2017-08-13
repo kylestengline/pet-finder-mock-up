@@ -124,6 +124,11 @@ h4.adoption-available {
   text-align: center;
 }
 
+.posted-by {
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .show-admin-dogs {
   margin-top: 55px;
   margin-left: 25px;
