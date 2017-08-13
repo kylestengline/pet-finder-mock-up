@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  default_url_options host: "https://dogseekers.herokuapp.com/"
+
   root to: 'homepages#index'
 
   get "dogs/adoption", as: "adoption_info"
