@@ -6,14 +6,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dog.destroy_all
-Admin.destroy_all
 Breed.destroy_all
 
-Admin.create!(
-  email: ENV["ADMIN_EMAIL"],
-  password: ENV["ADMIN_PASSWORD"],
-  id: 1
-)
+unless Admin.find_by(email: ENV["ADMIN_EMAIL"])
+  Admin.destroy_all
+  Admin.create!(
+    email: ENV["ADMIN_EMAIL"],
+    password: ENV["ADMIN_PASSWORD"],
+    id: 1
+  )
+end
 
 Dog.create!([
   { 
