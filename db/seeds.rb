@@ -6,16 +6,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dog.destroy_all
-Admin.destroy_all
 Breed.destroy_all
+Admin.destroy_all
 
-a = Admin.new(
+Admin.create!(
   email: ENV["ADMIN_EMAIL"],
   password: ENV["ADMIN_PASSWORD"],
   id: 1
 )
-
-a.save!
 
 Dog.create!([
   { 
