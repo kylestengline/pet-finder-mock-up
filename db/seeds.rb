@@ -9,11 +9,13 @@ Dog.destroy_all
 Admin.destroy_all
 Breed.destroy_all
 
-Admin.create!(
+a = Admin.new(
   email: ENV["ADMIN_EMAIL"],
   password: ENV["ADMIN_PASSWORD"],
   id: 1
 )
+
+a.save!
 
 Dog.create!([
   { 
