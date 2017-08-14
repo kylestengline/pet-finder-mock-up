@@ -8,6 +8,10 @@ class Dog < ApplicationRecord
   validate :sanitize_breed_profanity
   validate :dirty_dog_name
   validate :dirty_breed_name
+  validate :dirty_birth_date
+  validate :sanitize_birth_date_profanity
+  validate :dirty_color
+  validate :sanitize_color_profanity
   
   def sanitize_dog_profanity
     bad_filter = LanguageFilter::Filter.new matchlist: :profanity
@@ -34,6 +38,34 @@ class Dog < ApplicationRecord
     sex_filter = LanguageFilter::Filter.new matchlist: :sex
     if sex_filter.match?(breed)
       errors.add(:breed, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
+  def dirty_birth_date
+    sex_filter = LanguageFilter::Filter.new matchlist: :sex
+    if sex_filter.match?(birth_date)
+      errors.add(:birth_date, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
+  def sanitize_birth_date_profanity
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if bad_filter.match?(birth_date)
+      errors.add(:birth_date, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
+  def dirty_color
+    sex_filter = LanguageFilter::Filter.new matchlist: :sex
+    if sex_filter.match?(color)
+      errors.add(:color, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
+  def sanitize_color_profanity
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if bad_filter.match?(color)
+      errors.add(:color, "This kind of language is inappropriate for a breed name.")
     end
   end
 
