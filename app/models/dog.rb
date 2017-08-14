@@ -4,6 +4,39 @@ class Dog < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   include Gravtastic
 
+  validate :sanitize_dog_profanity
+  validate :sanitize_breed_profanity
+  validate :dirty_dog_name
+  validate :dirty_breed_name
+  
+  def sanitize_dog_profanity
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if bad_filter.match?(name)
+      errors.add(:name, "This kind of language is inappropriate for a dog name.")
+    end
+  end
+
+  def sanitize_breed_profanity
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if bad_filter.match?(breed)
+      errors.add(:breed, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
+  def dirty_dog_name
+    sex_filter = LanguageFilter::Filter.new matchlist: :sex
+    if sex_filter.match?(name)
+      errors.add(:name, "This kind of language is inappropriate for a dog name.")
+    end
+  end
+
+  def dirty_breed_name
+    sex_filter = LanguageFilter::Filter.new matchlist: :sex
+    if sex_filter.match?(breed)
+      errors.add(:breed, "This kind of language is inappropriate for a breed name.")
+    end
+  end
+
   gravtastic :secure => true,
              :filetype => :jpg,
              :size => 250
