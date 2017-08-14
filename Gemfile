@@ -39,6 +39,7 @@ gem 'database_cleaner'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'compass'
+gem 'language_filter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
