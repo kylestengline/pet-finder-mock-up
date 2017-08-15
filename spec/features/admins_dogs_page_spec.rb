@@ -20,7 +20,7 @@ RSpec.feature "Admins Dog Page" do
 
     visit root_path
     click_link "All Dogs"
-    expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin.email }")
+    expect(page).to have_selector("h1", text: "Showing all dogs for #{ admin.email }")
     expect(page).to have_content dog.name
     expect(page).to have_content dog.age
     expect(page).to have_content dog.breed
@@ -36,7 +36,7 @@ RSpec.feature "Admins Dog Page" do
     login admin2
 
     click_link "All Dogs"
-    expect(page).to have_selector("h1", text: "Showing All Dogs for #{ admin2.email }")
+    expect(page).to have_selector("h1", text: "Showing all dogs for #{ admin2.email }")
     expect(page).to have_selector("h2", text: "#{admin2.email} hasn't posted any dogs yet.")
 
     expect(page).to have_current_path admin_admins_path
