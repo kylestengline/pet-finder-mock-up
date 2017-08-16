@@ -56,7 +56,7 @@ Dog.create!([
     adoptable: true,
     size: "large",
     photo: "http://cdn2-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg",
-    color: "black",
+    color: "black, orange",
     birth_date: Faker::Date.birthday(1, 9),
     admin_id: 1
   },
