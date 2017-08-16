@@ -4,69 +4,35 @@ class Dog < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   include Gravtastic
 
-  validate :sanitize_dog_profanity
-  validate :sanitize_breed_profanity
-  validate :dirty_dog_name
-  validate :dirty_breed_name
-  validate :dirty_birth_date
-  validate :sanitize_birth_date_profanity
-  validate :dirty_color
-  validate :sanitize_color_profanity
+  validate :sanitize_dog_name
+  validate :sanitize_breed
+  validate :sanitize_birth_date
+  validate :sanitize_color
+  validate :sanitize_photo
+
+  def filters
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    sex_filter = LanguageFilter::Filter.new matchlist: :sex
+  end
   
-  def sanitize_dog_profanity
-    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
-    if bad_filter.match?(name)
-      errors.add(:name, "This kind of language is inappropriate for a dog name.")
-    end
+  def sanitize_dog_name
+    errors.add(:name, ": This kind of language is inappropriate.") if filters.match?(name)
   end
 
-  def sanitize_breed_profanity
-    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
-    if bad_filter.match?(breed)
-      errors.add(:breed, "This kind of language is inappropriate for a breed name.")
-    end
+  def sanitize_breed
+    errors.add(:breed, ": This kind of language is inappropriate.") if filters.match?(breed)
   end
 
-  def dirty_dog_name
-    sex_filter = LanguageFilter::Filter.new matchlist: :sex
-    if sex_filter.match?(name)
-      errors.add(:name, "This kind of language is inappropriate for a dog name.")
-    end
+  def sanitize_color
+    errors.add(:color, ": This kind of language is inappropriate.") if filters.match?(color)
   end
 
-  def dirty_breed_name
-    sex_filter = LanguageFilter::Filter.new matchlist: :sex
-    if sex_filter.match?(breed)
-      errors.add(:breed, "This kind of language is inappropriate for a breed name.")
-    end
+  def sanitize_birth_date
+    errors.add(:birth_date, ": This kind of language is inappropriate.") if filters.match?(birth_date)
   end
 
-  def dirty_birth_date
-    sex_filter = LanguageFilter::Filter.new matchlist: :sex
-    if sex_filter.match?(birth_date)
-      errors.add(:birth_date, "This kind of language is inappropriate for a breed name.")
-    end
-  end
-
-  def sanitize_birth_date_profanity
-    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
-    if bad_filter.match?(birth_date)
-      errors.add(:birth_date, "This kind of language is inappropriate for a breed name.")
-    end
-  end
-
-  def dirty_color
-    sex_filter = LanguageFilter::Filter.new matchlist: :sex
-    if sex_filter.match?(color)
-      errors.add(:color, "This kind of language is inappropriate for a breed name.")
-    end
-  end
-
-  def sanitize_color_profanity
-    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
-    if bad_filter.match?(color)
-      errors.add(:color, "This kind of language is inappropriate for a breed name.")
-    end
+  def sanitize_photo
+    errors.add(:photo, ": This kind of language is inappropriate.") if filters.match?(photo)
   end
 
   gravtastic :secure => true,
