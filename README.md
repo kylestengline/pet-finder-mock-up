@@ -1,4 +1,4 @@
-# Pet Finder Mock Up - AKA Dog Seekers
+# Dog Seekers
 
 ## Why I built this?
 
