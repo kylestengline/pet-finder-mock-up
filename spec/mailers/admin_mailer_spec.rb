@@ -15,7 +15,7 @@ RSpec.describe AdminMailer, type: :mailer do
     end
 
     it "renders the sender email" do
-      expect(mail.from).to eq ["no-reply@dogseekers.com"]
+      expect(mail.from).to eq ["no-reply@dogseekers.herokuapp.com"]
     end
 
     it "engages with a specific admin" do
@@ -41,7 +41,7 @@ RSpec.describe AdminMailer, type: :mailer do
     end
 
     it "renders the sender email" do
-      expect(mail2.from).to eq ["no-reply@dogseekers.com"]
+      expect(mail2.from).to eq ["no-reply@dogseekers.herokuapp.com"]
     end
 
     it "engages with a specific admin" do
