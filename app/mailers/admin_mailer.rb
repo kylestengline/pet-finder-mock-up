@@ -2,12 +2,12 @@ class AdminMailer < Devise::Mailer
   helper :application # gives access to all helpers defined within `application_helper`.
   include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
 
-  default from: ENV["ADMIN_EMAIL"]
+  default from: "no-reply@dogseekers.com"
 
   def confirmation_instructions(record, token, opts={})
     headers["Custom-header"] = "Welcome to Dog Seekers"
-    opts[:from] = ENV["ADMIN_EMAIL"]
-    opts[:reply_to] = ENV["ADMIN_EMAIL"]
+    opts[:from] = "no-reply@dogseekers.com" 
+    opts[:reply_to] = "no-reply@dogseekers.com"
     super
   end
 
@@ -16,14 +16,6 @@ class AdminMailer < Devise::Mailer
     opts[:from] = ENV["ADMIN_EMAIL"]
     opts[:reply_to] = ENV["ADMIN_EMAIL"]
     super
-  end
-
-  def welcome_email(admin)
-    @admin = admin
-    #Production
-    @login_url = "https://dogseekers.herokuapp.com/sign_in" 
-    #@login_url = "http://localhost:3000/admins/sign_in" 
-    mail(to: @admin.email, subject: "Welcome to Dog Seeker!")
   end
 
   def create_dog_email(dog)

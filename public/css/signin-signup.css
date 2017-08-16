@@ -7,15 +7,15 @@
   background-color: #fff;
   display: inline-block;
   padding: 25px;
-  width: 650px;
+  width: 700px;
   height: 450px;
-  margin-left: 28%;
-  margin-top: 10%;
+  margin-left: 25.5%;
+  margin-top: 7%;
   border: 5px solid #222;
 }
 
 #signup-form {
-  height: 550px;
+  height: 600px;
 }
 
 .login-title, .sign-up-title {
@@ -54,7 +54,7 @@ input.email-field, input.password-field {
 }
 
 .signup-button > * {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .login-button > *,
@@ -110,9 +110,17 @@ input.email-field, input.password-field {
 }
 
 #error_explanation {
-  background-color: white;
-  padding: 10px;
-  padding-top: -70px;
+  background-color: rgba(255, 2, 7, 0.7);
+  margin-top: -15px;
+  font-size: 18px;
+  font-weight: 300;
+  padding-bottom: .05px
+}
+
+#error_explanation > h2 {
+  font-size: 20px;
+  padding-left: 30px;
+  padding-top: 10px;
 }
 
 div.panel-body {
