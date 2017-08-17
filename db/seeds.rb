@@ -100,9 +100,9 @@ Breed.create([
     photo: "http://static.ddmcdn.com/en-us/apl/breedselector/images/breed-selector/dogs/breeds/miniature-schnauzer_03_lg.jpg",
     description: "A dog breed who’s got it all in one small package: intelligence, affection, an extroverted temperament, humor, and a personality that’s twice as big as he is. Throw in that walrus moustache and quivering enthusiasm, and he’ll make you laugh every day. With a Miniature Schnauzer in the house, you’ll never be alone, not even when you go to the bathroom. He’s got personality-plus, and whether he’s bounding around ahead of you or curled up snoozing on your lap, you’ll never be bored with him around.",
     temperament: "Obedient, Intelligent, Alert, Fearless, Spirited, Friendly",
-    life_span: "Miniature Schnauzer: 12 – 14 years, Giant Schnauzer: 7 – 10 years, Standard Schnauzer: 13 – 16 years",
-    height: "Miniature Schnauzer: 12 – 14 in., Giant Schnauzer: 2.1 – 2.3 ft., Standard Schnauzer: 19 – 20 in",
-    weight: "Miniature Schnauzer: 11 – 18 lbs, Giant Schnauzer: 75 – 95 lbs, Standard Schnauzer: 31 – 44 lbs"
+    life_span: "Miniature Schnauzer: 12 – 14 years, Standard Schnauzer: 13 – 16 years",
+    height: "Miniature Schnauzer: 12 – 14 in., Standard Schnauzer: 19 – 20 in",
+    weight: "Miniature Schnauzer: 11 – 18 lbs, Standard Schnauzer: 31 – 44 lbs"
   },
   {
     name: "Beagle",
