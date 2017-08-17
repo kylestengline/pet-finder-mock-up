@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 class Admin
-
   def confirmation_instructions
     AdminMailer.confirmation_instructions(self, 'faketoken', {}).deliver_now
   end
