@@ -31,10 +31,8 @@ $(document).ready(function(){
     }
   );
 
-  // Remove Flash Messages after 2 seconds
+  // Remove Flash Messages after 5 seconds
   setTimeout(function(){
-    $('.alert').remove();
-  }, 2000);
+    $('.alert').fadeOut(3500);
+  }, 5000);
 });
-    
-
