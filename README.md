@@ -9,11 +9,9 @@ I built Dog Seekers to prove to myself that I was capable of building a large
 scale project with only the help of Google. In the past, I've implemented 
 features to large projects, but never built an entire large scale project; top-to-bottom.
 If you're reading this, then I've accomplished exactly what I set out to do.
-Granted, this site doesn't have the entire functionality of petfinder, and
-there's still A LOT of work to do, but I'm happy with where it's at currently.
-I've simply come to terms that I'm going to be working on this for a while. 
-To me, no project is really "finished", because there's always work to be
-done.
+There's still A LOT of work to do, but I've simply come to terms with the fact that I'm 
+going to be working on this for a while. To me, no project is really "finished", because
+there's always work to be done.
 
 ## Challenges
 
