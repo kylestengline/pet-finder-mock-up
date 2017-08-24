@@ -115,7 +115,7 @@ RSpec.feature "Dog Info Pages" do
     expect(page).to have_selector('h1', text: 'Dog Videos and How To\'s')
     expect(page).to have_selector('th', text: 'Training Your Dog')
     expect(page).to have_selector('th', text: 'When To Train Your Dog')
-    expect(page).to have_selector('th', text: 'Getting Training Help')
+    expect(page).to have_selector('th', text: 'Training Help')
     expect(page).to have_selector('th', text: 'Training Tutorial')
     expect(page).to have_selector('iframe')
     
