@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe AdminMailer, type: :mailer do
 
-  describe "create dog email" do
+  describe "sends email to confirm dog is created" do
+
     let(:admin) { Admin.create(email: "test@example.com", password: "password") }
     let(:mail) { described_class.create_dog_email(admin).deliver_now }
 
@@ -28,7 +29,7 @@ RSpec.describe AdminMailer, type: :mailer do
     end
   end
 
-  describe "update dog email" do
+  describe "sends email to confirm dog is updated" do
     let(:admin) { Admin.create(email: "test@example.com", password: "password") }
     let(:mail2) { described_class.update_dog_email(admin).deliver_now }
 
