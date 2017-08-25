@@ -11,7 +11,9 @@
   height: 450px;
   margin-left: 25.5%;
   margin-top: 7%;
-  border: 5px solid #222;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
 }
 
 #signup-form {

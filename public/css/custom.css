@@ -183,3 +183,22 @@ ul, a.hover, .nav>li>a:hover,
 li>ul, li>ul.dog-search {
   display: none; 
 }
+
+/* Email confirmation expired*/
+.form-resend-confirm-instructions > * {
+  max-width: 650px;
+  height: 325px;
+  background: #FAFAFA;
+  padding: 30px;
+  margin: 0px auto;
+  margin-top: 5%;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: 6px solid #305A72;
+}
+
+h2.resend-confirm-instructions {
+  position: relative;
+  margin-top: 5%;  
+  margin-left: 5%;  
+}
