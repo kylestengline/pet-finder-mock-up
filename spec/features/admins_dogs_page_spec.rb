@@ -2,11 +2,6 @@ require "rails_helper"
 
 RSpec.feature "Admins Dog Page" do
 
-  before(:each) do
-    #confirm = last_email.body.match(/confirmation_token=\w*/)
-    #visit "/admins/confirmation?#{confirm}"
-  end
-
   scenario "personalized admin page for showing all dogs" do
     admin = Admin.create(email: "admin@example.com", password: "password")
     dog = Dog.create(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", birth_date: "11/12/2015",

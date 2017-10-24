@@ -40,13 +40,14 @@ RSpec.describe Admin, type: :model do
     expect(Admin.new(email: "", password: "")).to_not be_valid
   end
 
-  def filters
-    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
-    sex_filter = LanguageFilter::Filter.new matchlist: :sex
-  end
-
   it "filters bad language" do
-    admin = Admin.new(email: "#{filters}", password: "password")
-    expect(page).to have_content  :email, ": This kind of language is inappropriate." if filters.match?(admin.email)
+    bad_filter = LanguageFilter::Filter.new matchlist: :profanity
+    bad_email = bad_filter.matchlist.pop
+    expect(
+      Admin.new(
+        email: "#{bad_email}"+"@me.com", password: "password"
+      ) 
+    )
+    .to_not be_valid
   end
 end

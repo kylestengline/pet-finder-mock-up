@@ -7,7 +7,8 @@ RSpec.describe Admin::DogsController, type: :controller do
 
   let(:dog) {Dog.create!(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", 
                          gender: "female", location: "92603", adoptable: true, size: "small", 
-                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg", admin_id: admin.id
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
+                         admin_id: admin.id
                         )}
 
   before(:each) do
