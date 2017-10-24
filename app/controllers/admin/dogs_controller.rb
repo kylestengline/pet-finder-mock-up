@@ -10,8 +10,7 @@ class Admin::DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.admin_id = current_admin.id
     if @dog.save
-      @admin = current_admin
-      AdminMailer.create_dog_email(@admin).deliver_now
+      AdminMailer.create_dog_email(current_admin).deliver_now
       flash[:success] = "Dog added successfully."
       redirect_to admin_admins_path
     else
@@ -33,8 +32,7 @@ class Admin::DogsController < ApplicationController
       redirect_to admin_admins_path
     else
       if @dog.update(dog_params)
-        @admin = current_admin
-        AdminMailer.update_dog_email(@admin).deliver_now
+        AdminMailer.update_dog_email(current_admin).deliver_now
         flash[:success] = "Dog successfully updated"
         redirect_to admin_admin_path(@dog)
       else

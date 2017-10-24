@@ -7,12 +7,14 @@ RSpec.describe Admin::AdminsController, type: :controller do
 
   let!(:dog) {Dog.create!(name: "Jill", age: 2, breed: "Corgi", title_age: "baby", color: "orange",
                          gender: "female", location: "92603", adoptable: true, size: "small", 
-                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg", admin_id: admin.id
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
+                         admin_id: admin.id
                         )}
 
   let!(:dog2) {Dog.create!(name: "Erik", age: 4, breed: "German Shepard", title_age: "young", color: "white",
                          gender: "male", location: "92603", adoptable: true, size: "medium", 
-                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg", admin_id: admin2.id
+                         photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
+                         admin_id: admin2.id
                         )}
 
   before(:each) do

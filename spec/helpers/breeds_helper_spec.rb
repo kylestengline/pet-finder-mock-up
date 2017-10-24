@@ -11,5 +11,4 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe BreedsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
 end
