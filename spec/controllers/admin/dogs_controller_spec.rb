@@ -13,7 +13,6 @@ RSpec.describe Admin::DogsController, type: :controller do
 
   before(:each) do
     login_admin admin
-    @dog_params = FactoryGirl.build(:dog).attributes
   end
 
   describe "Actions for admins to create dogs" do
@@ -22,8 +21,22 @@ RSpec.describe Admin::DogsController, type: :controller do
       #Must use params and not dog, b/c we're passing in params of dog
       #At least that's why I think I couldn't use dog in place of params
       it "allows admins to create new dogs" do
-        post :create, params: { dog: @dog_params }
+        post :create, params: { 
+          dog: {
+            name: "Jill",
+            age: 2,
+            breed: "Corgi",
+            title_age: "baby",
+            gender: "female",
+            location: "92111",
+            adoptable: true,
+            size: "small",
+            photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/JAA_3538-2.jpg/220px-JAA_3538-2.jpg",
+            admin_id: admin.id
+          }
+        }
         expect(response).to redirect_to admin_admins_path
+        expect(flash[:success]).to eq 'Dog added successfully.'
       end
     end
 
