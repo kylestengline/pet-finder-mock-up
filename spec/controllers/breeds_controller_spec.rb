@@ -7,7 +7,6 @@ RSpec.describe BreedsController, type: :controller do
                               description: "The Welsh Corgi is a small type of herding dog that originated in Wales. Two separate breeds are recognized: the Pembroke Welsh Corgi and the Cardigan Welsh Corgi. Historically, the Pembroke has been attributed to the influx of dogs alongside Flemish weavers from around the 10th century, while the Cardigan is attributed to the dogs brought with Norse settlers, in particular a common ancestor of the Swedish Vallhund. A certain degree of interbreeding between the two types has been suggested to explain the similarities between the two."
                             )}
 
-
   describe "breeds pages" do
     render_views
 

@@ -47,7 +47,6 @@ RSpec.describe Admin, type: :model do
       Admin.new(
         email: "#{bad_email}"+"@me.com", password: "password"
       ) 
-    )
-    .to_not be_valid
+    ).to_not be_valid
   end
 end
