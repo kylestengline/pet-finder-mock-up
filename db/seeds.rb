@@ -151,7 +151,7 @@ Breed.create([
   },
   {
     name: "Rotweiler",
-    photo: "http://www.natur-server.de/Bilder/Hunde/UB/001/ub000081-rottweiler.jpg",
+    photo: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12224942/Rottweiler-On-White-10.jpg",
     description: "Rottweilers were originally dogs bred to drive cattle to market. Later they were used to pull carts for butchers. They were among the earliest police dogs and serve with honor in the military. Most important, they are popular family guardians and friends.",
     temperament: "Obedient, Devoted, Fearless, Courageous, Alert, Self-assured, Good-natured, Calm, Steady, Confident",
     life_span: "8 – 10 years",
