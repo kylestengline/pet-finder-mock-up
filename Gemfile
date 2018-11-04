@@ -51,7 +51,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  gem 'factory_girl_rails'
+ # gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'launchy'
 end
 

@@ -8,8 +8,8 @@ Warden.test_mode!
 require 'spec_helper'
 require 'rspec/rails'
 require 'support/spec_test_helper'
-require 'factory_girl_rails'
-require 'support/factory_girl'
+require 'factory_bot_rails'
+require 'support/factory_bot'
 require 'rails-controller-testing'
 require 'support/controller_macros'
 require "database_cleaner"

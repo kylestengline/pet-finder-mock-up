@@ -1,6 +1,6 @@
 require 'faker'
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :dog do |f|
     f.id { 3 }
     f.location {"92603" }
