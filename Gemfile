@@ -14,7 +14,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', github: "rails/sass-rails"
+#gem 'sass-rails', github: "rails/sass-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -39,7 +39,8 @@ gem 'better_errors'
 gem 'faker'
 gem 'database_cleaner'
 gem 'jquery-rails'
-gem 'bootstrap'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '>= 3.2'
 gem 'compass'
 gem 'language_filter'
 
@@ -51,7 +52,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
- # gem 'factory_girl_rails'
   gem 'factory_bot_rails'
   gem 'launchy'
 end
