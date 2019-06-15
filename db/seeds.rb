@@ -133,7 +133,7 @@ Breed.create([
   },
   {
     name: "Golden Retriever",
-    photo: "http://cdn.abclocal.go.com/content/creativecontent/images/cms/406006_1280x720.jpg",
+    photo: "https://vetstreet.brightspotcdn.com/dims4/default/21dc2d6/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F9f%2F9b%2F6ff000df4e4d8e8c70608cf6e0f5%2Fgolden-retriever-ap-0johoo-645.jpg",
     description: "The Golden Retriever is one of the most popular dog breeds in the U.S. The breed’s friendly, tolerant attitude makes him a fabulous family pet, and his intelligence makes him a highly capable working dog. Golden Retrievers excel at retrieving game for hunters, tracking, sniffing out drugs, and as therapy and assistance dogs. They’re also natural athletes, and do well in dog sports such as agility and competitive obedience.",
     temperament: "Intelligent, Reliable, Friendly, Trustworthy, Confident, Kind",
     life_span: "10 – 12 years",
